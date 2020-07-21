@@ -1,0 +1,476 @@
+/* general */
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: robotoR;
+}
+body{
+    /* background-color: rgb(245, 245, 237); */
+    background-color: #363433;
+    color:#f1f1e9;
+    font-family: 'robotoL';
+}
+@font-face {
+    font-family: robotoL;
+    src: url("./fonts/Roboto/Roboto-Light.ttf");
+}
+@font-face {
+    font-family: robotoR;
+    src: url("./fonts/Roboto/Roboto-Regular.ttf");
+}
+* h1,h2,h3,h4,h5 {
+    font-family: 'robotoL';
+    font-variant: small-caps;
+}
+/* header css */
+header {
+    width:100%;
+    margin-top: 1em;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    font-family: robotoL;
+    
+}
+a{
+    text-decoration:none;
+    font-variant: small-caps;
+    color:#050004;
+}
+button{
+    border:none;
+    outline:none;
+    color: #050004;
+    padding: 1.5em 1em;
+    font-variant: small-caps;
+    background-image: none;
+} 
+a:hover,
+button:hover{
+    color: white;
+}
+header > a {
+    color:#f0eaf1;
+    font-variant: normal;
+}
+header > a:hover{
+    font-weight: normal;
+    font-family: robotoR;
+    color:#ec994c;
+}
+.navBar {
+    width: 100%;
+    margin-top: 2em;
+    opacity:0.9;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.navLinks{
+    background-image: url('./images/navLinks.png');
+    padding-left: 1.3em;
+}
+.navLinks > button > a {
+    margin-left: 1.5em;
+}
+.userDiv{
+    background-image: url('./images/navBtns.png');
+    background-size: cover;
+    padding-right: 1em;
+}
+.navLinks,
+.userDiv{
+    width:33%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1em;
+}
+.codeBtn,
+.contactBtn{
+    background-color: #744e7c;
+}
+.teaBtn{
+    background-color: #92d00d;
+}
+.yqBtn,
+.moodBtn{
+    background-color: #0ecbd7;
+}
+.weatherBtn{
+    background-color: #ec994c;
+    padding-left: 1.5em;
+}
+/* guest section */
+.username{
+    /* align-self: flex-start; */
+    font-size: large;
+}
+.guestForm{
+    position: absolute;
+    top:5em;
+    left:44%;
+    display:flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+.btnsDiv{
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+}
+.guestBtn,
+.friendBtn,
+.emailBtn{
+    color: #bbbbb7;
+    padding:1em 2em;
+    font-variant: normal;
+    /* background-color: rgb(245, 245, 237); */
+    background-color: rgba(253, 251, 249, 0);
+    cursor: pointer;
+}
+.guestBtn:hover,
+.friendBtn:hover,
+.emailBtn:hover{
+    font-weight: normal;
+    color:#ec994c;
+}
+input {
+    outline:none;
+    border-width: 0 0 1px;
+    border-color: #744e7c;
+    padding:0.3em 0;
+    background-color: #423a44;
+    text-align: center;
+    
+}
+input::placeholder{
+    color:#ebebc6;
+}
+input:focus{
+    background-color: rgb(236, 235, 228);;
+}
+.emailForm{
+    display: flex;
+    flex-direction: column;
+}
+.flowerSwitch{
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(253, 251, 249, 0);
+    position: absolute;
+    top:2%;
+    right:48%;
+    width: 1.5em;
+    height:1.5em;
+    padding: 0.3em;
+}
+/* hiPage */
+.hiApp{
+    margin-top: 2em;
+    text-align: center;
+    line-height: 1.5em;
+    
+}
+.hiApp > p {
+    margin-bottom: 1em;
+    font-family: 'robotoL';
+}
+b{
+    font-family: 'robotoL';
+    font-weight: 600;
+    letter-spacing: 0.9px;
+}
+.hiApp > img {
+    width: 10em;
+    margin: -1.5em;
+}
+.pick {
+   color:#744e7c; 
+}
+.spanCode,
+.spanFlower,
+.spanBreath{
+    color:#cbb5d6;
+    cursor:pointer;
+}
+.spanFlower{
+    color:#d0e2ab;
+}
+.spanBreath{
+    color:#aae5f2;
+}
+/* doorsPage */
+.doorsDiv {
+    width:90%;
+    margin:0 auto; 
+    margin-top: 8em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.door {
+    width: 20%;
+    height: 21em;
+    background-size: cover;
+    background-position: center;
+}
+.doorScreen {
+    width: 65%;
+    height:100%;
+    opacity:0.8;
+    padding: 1em;
+    margin-bottom: -1em;
+    background-color: #744e7c;
+    color:white;
+}
+.doorScreen > h3 {
+    font-size: large;
+    font-variant: small-caps;
+}
+.teaD {
+    background-color: #92d00d;
+}
+.yqD {
+    background-color: #0ecbd7;
+}
+/* codeDeck */
+.codeDeck{
+    width:75%;
+    margin:0 auto;
+    display:flex;
+    flex-flow:column wrap;
+}
+.codeDeck > a {
+    color:black;
+}
+.studyContainer {
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.toolKit {
+    width: 27%;
+}
+.toolKit img{
+    max-width:150%;
+}
+.toolKit h3,
+.kitDetails h3,
+.practiceWrapper h3{
+    font-family: 'robotoR';
+    font-variant: small-caps;
+    margin-bottom:2em;
+    font-size: medium;
+    font-weight: lighter;
+    color: #ec994c;
+}
+.kitDetails{
+    margin-right:2em;
+    
+}
+.kitDetails > h4{
+    margin-bottom: 1em;
+    font-size: medium;
+    font-weight: lighter;
+    color: #bbbbb7;
+}
+.kitDetails > p{
+    margin-bottom: 0.7em;
+    font-size: small;
+    font-family: 'robotoL';
+    letter-spacing: 0.5px;
+}
+.playFrame{
+    background-color: rgb(70, 69, 67);
+    width: 90%;
+    margin: 0 auto;
+    position: absolute;
+    top: 25%;
+    left:5%;
+    z-index:2;
+    align-items: center;
+}
+.frameTop, 
+.frameBottom {
+    background-color: #744e7c;
+    opacity: 0.8;
+    width:100%;
+    height:2em;
+}
+iframe{
+    width: 100%;
+    margin: 0 auto;
+    height:30em;
+    outline:none;
+    border:none;
+}
+.closeFrame {
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(116, 78, 124,0);
+    cursor: pointer;
+    position: absolute;
+    top: 3%;
+    right: 2%;
+    padding: 12px 16px;
+    transform: translate(0%, -50%);
+  }
+  
+.practiceWrapper{
+    margin-top: 3em;
+}
+.practiceContainer{
+    margin-top: 2em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.projDiv{
+    width: 40%;
+    height:13em;
+    background-size: cover;
+    background-position: center;
+    /* margin-right: 3em; */
+    margin-bottom: 6em;
+    
+}
+
+.titleDiv{
+    /* background-color: #744e7c; */
+    background-color: rgba(116, 78, 124,0.4);
+    width: 100%;
+    position: relative;
+    top: 13em;
+    z-index: 2;
+    padding:1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    
+}
+.titleDiv > h4 {
+    font-family: 'robotoL';
+    font-weight: 550;
+    color: white;
+    width: 70%;
+}
+.infoBtn{
+    width: 1.5em;
+    height:1.5em;
+    padding:0.5em;
+    background-size: cover;
+    opacity: 0.7;
+    background-color: rgba(116, 78, 124,0);
+    cursor:pointer;
+}
+.infoDiv {
+    background-color: #ec994c;
+    color:rgb(252, 252, 252);
+    font-family: 'robotoL';
+    font-size: 0.9em;
+    position: relative;
+    top: -3.3em;
+    z-index: 1;
+    padding:1em;
+
+}
+
+/* FlowersField  /  FlowerDiv */
+.flowerBtn {
+    background-size: cover;
+    padding:0;
+    width: 35px;
+    height:35px;
+    background-color: rgba(253, 251, 249, 0);
+    opacity: 0.9;
+}
+.flowerPeek{
+    position: absolute;
+    top:9em;
+    left: 33%;
+    z-index:3;
+    width:34%;
+    background-color: rgba(54, 52, 51,0.89);
+    display:flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 1.5em 0 2em;
+}
+
+.flowerPeek img{
+    width: 60%;
+    margin-bottom: 0;
+}
+
+.historyDiv,
+.dayFactDiv{
+    width:60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1em;
+}
+.historyDiv{
+    background-color: rgba(118, 79, 125,0.8);
+}
+.dayFactDiv{
+    background-color: rgba(146, 208, 13,0.8);
+}
+.flowerNames {
+    width: 60%;
+    background-color: rgba(54, 52, 51,0.7);
+    color: #edfcd1;
+    position: absolute;
+    top:1.5em;
+    padding: 1em;
+}
+.flowerNames > h4 {
+    font-family: 'robotoL';
+    letter-spacing: 0.8px;
+    font-weight: 600;
+    font-size: large;
+    margin-bottom: 0.5em;
+}
+.flowerNames > h4 > span {
+    font-family: 'robotoL';
+    color:white;
+    font-variant: normal;
+    font-weight: 200;
+    font-size: smaller;
+}
+.flowerNames >p{
+    font-style: italic;
+    font-size: small;
+    color: #998f7f;
+}
+.coldTemp,
+.warmTemp{
+    width: 60%;
+    padding: 1em;
+    background-color: #0ecbd7;
+    color:white;
+}
+.warmTemp{
+    background-color: #ec994c;
+}
+.historyDiv > p,
+.dayFactDiv > p{
+    width: 80%;
+    color: white;
+    font-family: 'robotoL';
+    font-size: small;
+}
+
+.historyBtn,
+.dayFactBtn{
+    width:0.3em;
+    height:1.3em;
+
+    background-position: center;
+    background-size: cover;
+    
+}
