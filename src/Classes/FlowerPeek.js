@@ -1,7 +1,7 @@
-import { renderElement, getTemperament } from "../../utilitary.js";
+import { renderElement, renderBtn, getTemperament } from "../../utilitary.js";
 
 
-class Flower{
+class FlowerPeek{
     constructor(DomEl, flower){
         this.DomEl = DomEl;
         this.flower = flower;
@@ -14,8 +14,9 @@ class Flower{
         }else{
             this[page] = 0;
         }
-        
+        e.target.parentElement.parentElement.remove();
         e.target.parentElement.innerHTML = `<p>${this.flower[section][this[page]]}</p>`;
+       
         this.render();
     }
     renderFacts(section, page){
@@ -33,14 +34,14 @@ class Flower{
         return pageDiv;
     }
     render(){
-        //this.DomEl.innerHTML='';
+        //this.DomEl.lastChild.innerHTML='';
         const flowerPeek = renderElement('div', 'flowerPeek');
         
         const history = this.renderFacts('history', 'historyPg');
         const facts = this.renderFacts('dayFact', 'factPg');
 
-        const tempClass = getTemperament(this.flower.temperament)
-        const closeBtn = renderElement('button', 'closeFrame', '../../images/codePractice/icons/closeBtn.png');
+        const tempClass = getTemperament(this.flower.temperament[0]);
+        const closeBtn = renderBtn('closeFrame', 'X');
         closeBtn.addEventListener('click',(e) => {
             e.target.parentElement.remove();
         })
@@ -50,7 +51,7 @@ class Flower{
                                     <h4><span>I'm </span>${this.flower.name[0]}</h4>
                                     <p>${this.flower.name[1]}, ${this.flower.name[2]}</p>
                                 </div>
-                                <p class=${tempClass}>${this.flower.temperament}</p>`
+                                <p class=${tempClass}>${this.flower.temperament[0]}</p>`
         flowerPeek.append(closeBtn);
 
         flowerPeek.appendChild(history);
@@ -59,18 +60,6 @@ class Flower{
         this.DomEl.appendChild(flowerPeek);
 
     }
-//     renderFlowerDetails(){
-//         this.DomEl.innerHTML='';
-//         const flowerDetails = renderElement('div', 'flowerDetails');
-//         // const history = this.renderHistory();
-//         flowerDetails.innerHTML =`<img src=${this.flower.imgSrc} alt='flower picture' />
-//                                   <h5>${this.flower.name[0]}</h5>
-//                                   <p>${this.flower.name[1]}, ${this.flower.name[2]}</p>
-//                                   <h6>History</h6>`
-//         // flowerDetails.appendChild(history);
+}
 
-//         this.DomEl.appendChild(flowerDetails);
-//     }
- }
-
-export { Flower };
+export { FlowerPeek };

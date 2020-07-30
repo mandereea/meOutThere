@@ -15,12 +15,17 @@ class HiPage {
                 <p> I AM </br>
                     <b>andreea mandiuc,</b><br/>
                     your host. </p> 
-                <p> While here, you can 
-                        <span class='spanCode tooltip'><i> check my CODE </i>
-                            <span class="tooltiptext">${info.iCode}</span></span>, stop to 
-                        <span class='spanFlower tooltip'><i> smell a flower </i>
+                <p> While here, we can 
+                        <span class='spanCode tooltip'> talk CODE
+                            <span class="tooltiptext">
+                                ${info.iCode[0]}
+                                <input class='codeTalk'type='text' maxlenght='9' focus/>
+                                ${info.iCode[1]}</br>
+                                <span style='color:#ec994c'>${info.iCode[2]}
+                                </span></i></span></span>, stop to 
+                        <span class='spanFlower tooltip'> smell a flower 
                             <span class="tooltiptext">${info.iFlower}</span></span>,</br>or just 
-                        <span class='spanBreath tooltip'><i> pause and stretch a full breath </i> 
+                        <span class='spanBreath tooltip'> pause and stretch a full breath  
                             <span class="tooltiptext">${info.iPause}</span></span></a>.</p>
                 <p> I AM</br>
                     <b> happy to greet you </b></p>

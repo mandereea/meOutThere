@@ -1,0 +1,894 @@
+/* general */
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: robotoR;
+}
+body{
+    background-color: rgb(245, 245, 237); 
+}
+@font-face {
+    font-family: robotoL;
+    src: url("./fonts/Roboto/Roboto-Light.ttf");
+}
+@font-face {
+    font-family: robotoR;
+    src: url("./fonts/Roboto/Roboto-Regular.ttf");
+}
+* h1,h2,h3,h4,h5 {
+    font-family: 'robotoL';
+    font-variant: small-caps;
+}
+/*                                                                   Header css */
+header {
+    width:100%;
+    margin-top: 2em;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    font-family: robotoL;
+    
+}
+a{
+    text-decoration:none;
+    font-variant: small-caps;
+    color:white;
+}
+button{
+    border:none;
+    outline:none;
+    color: white;
+    padding: 1.5em 1em;
+    font-variant: small-caps;
+    cursor: pointer;
+} 
+a:hover,
+button:hover{
+    color: #38203d;
+}
+header > a {
+    color:#744e7c;
+    font-variant: normal;
+    font-size: large;
+}
+header > a:hover{
+    font-weight: normal;
+    font-family: robotoR;
+    color:#ec994c;
+    font-size: larger;
+    text-decoration:underline;
+}
+.navBar {
+    width: 100%;
+    margin-top: 2em;
+    opacity:0.8;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.navLinks{
+    background-image: url('./images/navLinks.png');
+    padding-left: 1.3em;
+}
+.navLinks > button > a {
+    margin-left: 1.5em;
+}
+.userDiv{
+    background-image: url('./images/navBtns.png');
+    background-size: cover;
+    padding-right: 1em;
+}
+.navLinks,
+.userDiv{
+    width:33%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1em;
+}
+.codeBtn,
+.contactBtn{
+    background-color: #744e7c;
+}
+.teaBtn{
+    background-color: #92d00d;
+}
+.yqBtn,
+.moodBtn{
+    background-color: #0ecbd7;
+}
+.weatherBtn{
+    background-color: #ec994c;
+    padding-left: 1.5em;
+}
+/*                                                 contactSection        */
+.contactDetails{
+    width: 22%;
+    align-self: flex-end;
+    padding:2em;
+    background-color: rgba(116, 78, 124,0.8);
+    color: #d0dcdd;
+}
+.contactDetails > p > span{
+    color:rgb(245, 244, 239);
+    margin-left:0.5em;
+}
+.contactDetails > p > a{
+    color: #e7c7a9;
+    font-variant: normal;
+    margin-left: 0.3em;
+}
+/*                                                               Guest section */
+.username{
+    background-color: rgba(245, 249, 250,0);
+    color:#242322;
+    font-size: large;
+    font-variant: normal;
+    padding:0;
+}
+.guestForm{
+    position: absolute;
+    top:5em;
+    left:44%;
+    display:flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+.btnsDiv{
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+}
+.guestBtn,
+.friendBtn,
+.emailBtn{
+    color: #744e7c;
+    padding:1em 2em;
+    font-variant: normal;
+    /* background-color: rgb(245, 245, 237); */
+    background-color: rgb(245, 245, 237);
+    cursor: pointer;
+}
+.guestBtn:hover,
+.friendBtn:hover,
+.emailBtn:hover{
+    font-weight: normal;
+    color:#ec994c;
+}
+input {
+    outline:none;
+    border-width: 0 0 1px;
+    border-color: #744e7c;
+    padding:0.3em 0;
+    background-color: rgb(236, 235, 228);
+    text-align: center;
+    
+}
+input:focus{
+    background-color: rgb(221, 217, 205);;
+}
+.emailForm{
+    display: flex;
+    flex-direction: column;
+}
+.logOut{
+    color: #585b5c;
+    background-color: rgb(236, 235, 228);
+    margin-left:1em;
+}
+.logOut:hover{
+    color:#ec994c;
+}
+/*                                      sideDoors   */
+.sideDoors{
+    width:5%;
+    position: sticky;
+    top: 25em;
+    display: flex;
+    flex-direction: column;
+    
+}
+.sideDoors > a{
+    margin-bottom:2em;
+    background-color: black;
+    color:red;
+   
+    padding:1em;
+}
+/*                                      flowerSwitch    */
+.flowerSwitch{
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top:2%;
+    right:48%;
+    width: 1.5em;
+    height:1.5em;
+    padding: 0.3em;
+    cursor: pointer;
+}
+.flowerSwitch:hover{
+    width:1.9em;
+    height:1.9em;
+}
+/*                                                                pauseFeature  */
+.pauseBtn{
+    font-size: large;
+    font-weight: 900;
+    padding: 0.5em 1em;
+    background-color: rgba(8, 133, 172,0);
+    color:rgba(0, 255, 255,0);
+    border-radius: 6px;
+    position:absolute;
+    top:0.5em;
+    left:33%;
+}
+.pauseBtn:hover{
+    background-color: rgba(8, 133, 172,0.8);
+    color:#f5f5ed
+}
+.pauseContainer{
+    position:absolute;
+    top:9.8em;
+    left:23%;
+    width:54%;
+    background-color: rgba(250, 253, 253, 0.95);
+    padding:2em;
+
+    display:flex;
+    flex-direction: column;
+
+}
+.yClose{
+    background-color: rgba(250, 253, 253, 0);
+    color:#363633;
+    font-size: large;
+    position: absolute;
+    top:0;
+    right:1em;
+}
+.yBtnsContainer{
+    width: 33%;
+    margin-left:33%;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.yinBtn,
+.yangBtn{
+    width: 5em;
+    padding:1em;
+    background-color: rgba(14, 203, 215,0.9);
+    border-radius:6px;
+    font-size: larger;
+}
+.yangBtn{
+    background-color: rgba(254, 147, 10,0.9);
+}
+.pauseContainer > h3, 
+.pauseContainer > p {
+    font-family: 'robotoL';
+    font-variant:normal;
+    font-weight: normal;
+    
+}
+.breathDiv > p{
+    line-height: 2em;
+}
+.breathDiv > h2{
+    font-family: 'robotoR';
+    color: #363633;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1em;
+}
+.breathDiv > h2 > span{
+    font-size: medium;
+    font-variant: normal;
+}
+.pauseTime{
+    width: 3em;
+    margin: 1em;
+    
+}
+.startPause{
+    position: absolute;
+    left: 55%;
+    bottom: 7em;
+    background-color: rgba(245, 245, 237,0);
+    background-size: cover;
+    background-position: center ;
+    width: 2em;
+    height:2.3em;
+   padding:0 0.3em;
+}
+.pauseContainer img{
+    width: 50%;
+    margin-left:25%;
+}
+.pauseBarContainer{
+    width:100%;
+    height: 3em;
+    
+    background-color: rgb(245, 245, 237); ;
+}  
+.pauseDeLoading{
+    width:50%;
+    height:3em;
+    background-color: rgb(245, 245, 237); ;
+    padding:0.7em 0.4em;
+    color:white;
+}
+/*                                                                     hiPage */
+.hiApp{
+    margin-top: 2em;
+    text-align: center;
+    line-height: 1.5em;
+}
+.hiApp > p {
+    margin-bottom: 1em;
+}
+.hiApp > img {
+    width: 10em;
+    margin: -1.5em;
+}
+.pick {
+   color:#744e7c; 
+}
+.pick:hover{
+    color:#ec994c;
+}
+.spanCode,
+.spanFlower,
+.spanBreath{
+    position: relative;
+    display: inline-block;
+    
+    color:#744e7c;
+    cursor:pointer;
+}
+.spanFlower{
+    color:#67ad2d;
+}
+.spanBreath{
+    color: #0885ac;
+}
+.tooltip .tooltiptext{
+    visibility: hidden;
+    width: 15em;
+    background-color:#744e7c;;
+    color: #fff;
+    padding: 0.8em;
+    border-radius: 6px;
+    text-align: left;
+    
+    position:absolute;
+    z-index:1;
+    margin-left:0.5em;
+}
+.codeTalk{
+    background-color: #a57dad;
+    color: white;
+    padding: 0.1em;
+    outline:none;
+    border:none;
+}
+.codeTalk:focus{
+    background-color: #744e7c;
+}
+.spanFlower .tooltiptext{
+    background-color:#92d00d;
+}
+.spanBreath .tooltiptext{
+    background-color:#0885ac;
+}
+.tooltip:hover{
+    text-decoration: underline;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+                                                           /* doorsPage */
+.doorsDiv {
+    width:90%;
+    margin:0 auto; 
+    margin-top: 8em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.door {
+    width: 20%;
+    height: 21em;
+    background-size: cover;
+    background-position: center;
+}
+.doorScreen {
+    width: 65%;
+    height:100%;
+    opacity:0.8;
+    padding: 1em;
+    margin-bottom: -1em;
+    background-color: #744e7c;
+    color:white;
+}
+.doorScreen > h3 {
+    font-size: large;
+    font-variant: small-caps;
+}
+.teaD {
+    background-color: #92d00d;
+}
+.yqD {
+    background-color: #0ecbd7;
+}
+                                                                          /* codeDeck */
+.codeDeck,
+.teaPage{
+    width:74%;
+    margin:0 auto;
+    display:flex;
+    flex-flow:column wrap;
+    margin-top: 2em;
+}
+.codeDeck > a {
+    color:black;
+}
+.studyContainer {
+   
+    display: flex;
+    justify-content: space-between;
+}
+.toolKit {
+    width: 26.5%;
+}
+.toolKit img{
+    max-width:150%;
+}
+.toolKit h3,
+.kitDetails h3,
+.practiceWrapper h3,
+.practiceLeft h3,
+.teaPage h3,
+.yqPage h3{
+    color: #343135;
+    font-family: 'robotoR';
+    font-size: medium;
+    font-variant: small-caps;
+    margin-bottom:2em;
+}
+.kitDetails{
+    margin-right:2em;
+}
+.kitDetails h4{
+    margin-bottom: 1em;
+}
+.kitDetails > h4{
+    margin-bottom: 1em;
+    font-size: medium;
+    
+    color: #363633;
+}
+.kitDetails > p{
+    margin-bottom: 0.7em;
+    font-size: small;
+    /* font-family: 'robotoL';
+    letter-spacing: 0.5px;
+} */
+}
+.playFrame{
+    background-color: white;
+    width: 90%;
+    margin: 0 auto;
+    position: absolute;
+    top: 25%;
+    left:5%;
+    z-index:2;
+    align-items: center;
+}
+.frameTop, 
+.frameBottom {
+    background-color: #0ecbd7;
+    opacity:0.8;
+    width:100%;
+    height:2em;
+}
+iframe{
+    width: 100%;
+    margin: 0 auto;
+    height:30em;
+    outline:none;
+    border:none;
+}
+.closeFrame {
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(14, 203, 215,0);
+    cursor: pointer;
+    position: absolute;
+    color:#38203d;
+    top: 3%;
+    right: 2%;
+    padding: 0.9em; 
+    transform: translate(0%, -50%); */
+  }
+  
+.practiceWrapper{
+    margin-top: 3em;
+}
+.practiceContainer{
+    margin-top: 2em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.projDiv{
+    width: 40%;
+    height:13em;
+    background-size: cover;
+    background-position: center;
+    /* margin-right: 3em; */
+    margin-bottom: 6em;
+}
+
+.titleDiv{
+    background-color: rgba(14, 203, 215, 0.8);
+    width: 100%;
+    position: relative;
+    top: 13.5em;
+    z-index: 2;
+    padding:1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.titleDiv > h4 {
+    color: white;
+    width: 70%;
+}
+.infoBtn{
+    width: 1.5em;
+    height:1.5em;
+    padding:0.5em;
+    background-size: cover;
+    background-color: #0ecbd7;
+}
+.infoDiv {
+    background-color: #0ecbd7;
+    color:rgb(252, 252, 252);
+    
+    position: relative;
+    top: -3.3em;
+    z-index: 1;
+    padding:1em;
+
+}
+/*                                                          YoQi         */
+.yqPage{
+    /* width: 76.54%;
+    margin-left: 12.34%;
+    margin-top: 2em;
+    display: flex;
+    flex-flow: column wrap; */
+}
+.qiStudy{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    
+}
+.studyDiv {
+    width: 21%;
+    text-align: center;
+    font-size: 0.9em;
+}
+.studyDiv img{
+    margin-bottom:1em;
+}
+.practiceDiv{
+    margin-top: 2em;
+    padding: 0.3em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.practiceRight{
+    text-align: right;
+    align-self: flex-end;
+}
+.practiceLeft > h3{
+    margin-bottom:1em;
+}
+.elementsWrapper{
+    width:75%;
+    margin: 0 auto;
+    
+}
+.elementDiv{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    padding:1em;
+}   
+.elementDiv > p{
+    width: 73%;
+}                                                         /* FlowersField  /  FlowerDiv */
+.flowerBtn {
+    background-size: cover;
+    opacity:0.9;
+    padding:0;
+    width: 35px;
+    height:35px;
+    background-color: rgba(253, 251, 249, 0);
+}
+.flowerPeek{
+    position: absolute;
+    top:8em;
+    left: 33%;
+    z-index:2;
+    width:34%;
+    background-color:rgba(255, 255, 245, 0.8);
+    display:flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 1em 0 2em;
+}
+
+.flowerPeek img{
+    width: 60%;
+    margin-bottom: 0;
+}
+
+.historyDiv,
+.dayFactDiv{
+    width:60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1em;
+}
+.historyDiv{
+    background-color: rgba(118, 79, 125,0.8);
+}
+.dayFactDiv{
+    background-color: rgba(146, 208, 13,0.8);
+}
+.flowerNames {
+    width: 60%;
+    background-color: rgba(245, 245, 237, 0.6);
+    color: #38203d;
+    position: absolute;
+    top:1em;
+    padding: 1em;
+}
+.flowerNames > h4 {
+    font-family: 'robotoR';
+    font-size: large;
+    margin-bottom: 0.3em;
+}
+.flowerNames > h4 > span {
+    font-variant: normal;
+    font-weight: lighter;
+    font-size: medium;
+}
+.flowerNames >p{
+    font-style: italic;
+    font-size: small;
+    color: #585b5c;
+}
+.coldTemp,
+.warmTemp{
+    width: 60%;
+    padding: 1em;
+    background-color: rgba(14, 202, 216,0.8);
+    color:white;
+}
+.warmTemp{
+    background-color: rgba(236, 153, 76,0.8);
+}
+.historyDiv > p,
+.dayFactDiv > p{
+    width: 80%;
+    color: white;
+    font-family: 'robotoL';
+    font-size: small;
+}
+.dayFactDiv > p{
+    color: #38203d;
+}
+.historyBtn,
+.dayFactBtn{
+    width:0.3em;
+    height:1.3em;
+
+    background-position: center;
+    background-size: cover;
+    
+}
+                                                /*                      WeatherApp          */
+.weatherWrapper{
+    width:100%;
+    height: 5em;
+    position: absolute;
+    top:0;
+    right:0;
+    z-index:-1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}
+.todayContainer{
+    width:33%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+    background-color: #f5eada; 
+}
+.todayContainer > div{
+    margin:0;
+    
+    height:5em;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+.weatherImgDiv{
+    background-color: rgba(116, 78, 124,0.8);
+    
+}
+.todayContainer >div > img{
+    width:4em;
+    margin:0;
+    padding:0;
+    margin-top:-0.5em;
+    
+}
+.todayContainer >div > p{
+    font-size: medium;
+    color: rgb(116, 78, 124);
+    margin:0;
+    padding:0;
+}
+.todayContainer .weatherImgDiv > p{
+    margin-top:-0.5em;
+    color:white;
+    padding: 0 2em;
+}
+.weatherBtns{
+    display:flex;
+    flex-direction: column;
+}
+.weatherBtns > button{
+    background-color: rgba(116, 78, 124,0.8);
+    width: 90%;
+    padding:0.5em;
+    margin:0.3em;
+}
+.dailyWrapper,
+.dayContainer{
+    margin-top:0.5em;
+    width: 33%;
+    align-self: flex-end;
+    background-color: #f5eada;
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.dayShortDiv {
+    width: 12%;
+    padding: 1em;
+    font-size: small;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.dayShortDiv img{
+    width: 100%;
+}
+.arrow {
+    margin-top:1em;
+    border: solid #EC6E4C;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+.down{
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.up{
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    margin-left:2em;
+}
+.dayLeft,
+.dayIcon,
+.dayRight{
+    width:30%;
+    padding: 0 0.3em;
+    font-size: small;
+    text-align: center;
+    display:flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+.dayLeft >h4,
+.dayRight >h4 {
+    margin-bottom:0.5em;
+    ;
+}
+.dayIcon img{
+    width:60%;
+}
+.dayIcon h3{
+    font-variant: normal;
+    margin-top: -1em;
+}
+.no-details{
+    margin: 1em;
+}
+.rise{
+    color: #EC6E4C;
+}
+.set{
+    color:rgb(120, 70, 139);
+}
+.warmer{
+    color: #EC6E4C;
+}
+.colder{
+    color:rgb(5, 121, 199);
+}
+
+/*                                                              TeaPavilion     */
+.teaPage{
+   
+}
+.teaTop{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+.herbsLeft p{
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+}
+.herbsLeft a{
+    font-variant: normal;
+    color: #38203d;
+}
+.herbsRight{
+    width: 76%;
+    margin-right: -2em;
+    background-color: #d0dcdd;
+}
+
+.teaShelf{
+    width: 76%;
+    align-self: flex-end;
+    margin-right: -2em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.herbDiv{
+    width:13%;
+}
+.herbDiv img{
+    width:100%;
+    
+}
+.tasteIcon{
+    width:3em;
+    height:3em;
+    border-radius: 0.5;
+}

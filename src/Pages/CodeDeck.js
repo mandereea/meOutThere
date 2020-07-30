@@ -1,4 +1,3 @@
-//import {} from '../../images/codePractice/aWise.png';
 import { CodeProject } from '../Classes/CodeProject.js';
 import { projects } from '../../Files/projects.js';
 import { renderToolKit, renderKitDetails, renderElement } from '../../utilitary.js'
@@ -6,16 +5,10 @@ import { renderToolKit, renderKitDetails, renderElement } from '../../utilitary.
 class CodeDeck{
     constructor(appDOM){
         this.appDOM = appDOM;
-        // this.project = {
-        //     imgSrc:'../../images/codePractice/aWise.png',
-        //     info : 'this project aims to blah blah blah'
-        //}
         this.projects = projects;
     }
     renderStudy(){
-        const study = document.createElement('div');
-        study.classList.add('studyContainer');
-
+        const study = renderElement('div', 'studyContainer');
         const toolKit = renderToolKit();
         const details = renderKitDetails();
         
@@ -25,15 +18,13 @@ class CodeDeck{
         return study;
     }
     renderPractice(){
-        const practiceWrapper = document.createElement('div');
-        practiceWrapper.classList.add('practiceWrapper');
+        const practiceWrapper = renderElement('div', 'practiceWrapper');
         practiceWrapper.innerHTML = `<h3> The Practice </h3>`
 
-        const practice = document.createElement('div');
-        practice.classList.add('practiceContainer');
-
+        const practice = renderElement('div', 'practiceContainer');
+        
         this.projects.map(project => {
-            const projectCeva = new CodeProject(practice, project)
+            const projectDiv = new CodeProject(practice, project)
         });
 
         practiceWrapper.appendChild(practice)
@@ -50,8 +41,6 @@ class CodeDeck{
         code.appendChild(study);
         code.appendChild(practice);
         
-
-        // console.log(projectDiv)
         this.appDOM.appendChild(code);
     }
 }

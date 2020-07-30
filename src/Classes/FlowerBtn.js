@@ -1,4 +1,4 @@
-import { Flower } from '../Classes/Flower.js';
+import { FlowerPeek } from './FlowerPeek.js';
 import { flowers, flowerBtns } from '../../Files/flowers.js';
 import {renderElement } from '../../utilitary.js';
 
@@ -25,12 +25,17 @@ class FlowerBtn{
                     flowerBtn.style.left = `${Math.floor(Math.random()*90)}px`
                     break;
                 case '#tea':
-                    flowerBtn.style.top = `${Math.floor(Math.random()*450)+50}px`;
+                    flowerBtn.style.top = `${Math.floor(Math.random()*550)+200}px`;
                     flowerBtn.style.left = `${Math.floor(Math.random()*150)}px`;
                     break;
                 case '#doors':
                     flowerBtn.style.top = `${Math.floor(Math.random()*150)+150}px`;
                     flowerBtn.style.left = `${Math.floor(Math.random()*650)}px`;
+                    break;
+                case '#yoQi':
+                    flowerBtn.style.top = `${Math.floor(Math.random()*150)+150}px`;
+                    flowerBtn.style.left = `${Math.floor(Math.random()*650)}px`;
+                    break;
             }
              
         }else if(this.side == 'right'){
@@ -43,12 +48,17 @@ class FlowerBtn{
                     flowerBtn.style.right = `${Math.floor(Math.random()*90)}px`
                     break;
                 case '#tea':
-                    flowerBtn.style.top = `${Math.floor(Math.random()*450)+50}px`
+                    flowerBtn.style.top = `${Math.floor(Math.random()*550)+200}px`
                     flowerBtn.style.right = `${Math.floor(Math.random()*150)}px`  
                     break;
                 case '#doors':
                     flowerBtn.style.top = `${Math.floor(Math.random()*150)+150}px`;
                     flowerBtn.style.right = `${Math.floor(Math.random()*650)}px`;
+                    break;
+                case '#yoQi':
+                    flowerBtn.style.top = `${Math.floor(Math.random()*150)+450}px`;
+                    flowerBtn.style.right = `${Math.floor(Math.random()*750)}px`;
+                    break;
                 }
         }
         
@@ -61,7 +71,7 @@ class FlowerBtn{
                 otherPeek.remove();
             }
             //rendering peek
-            const flower = new Flower (e.target.parentElement.parentElement, randomFlower);
+            const flower = new FlowerPeek (e.target.parentElement, randomFlower);
             flower.render();
             scroll(0, 0);
             e.target.remove();

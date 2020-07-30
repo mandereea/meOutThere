@@ -27,8 +27,10 @@ class PauseFeature{
         yin.addEventListener('click', (e) => {
             this.need = 'yin';
             this.yinBreath = yinBreaths;
+            
             renderBreath(e.target.parentElement.parentElement, this.need, this.yinBreath);
             renderBar(e.target.parentElement.parentElement, this.need);
+            e.target.parentElement.remove();
         });
 
         const yang = renderBtn('yangBtn', 'Yang');
@@ -37,6 +39,7 @@ class PauseFeature{
             this.yangBreath = yangBreaths;
             renderBreath(e.target.parentElement.parentElement, this.need, this.yangBreath);
             renderBar(e.target.parentElement.parentElement, this.need);
+            e.target.parentElement.remove();
         })
         const closeBtn = renderBtn('yClose','X');
         closeBtn.addEventListener('click', (e) => {

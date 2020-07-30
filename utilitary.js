@@ -1,3 +1,5 @@
+import { tasteDetails } from "./Files/teaLegend.js";
+
 //                                           global
 export function renderElement(element, className, imgSrc) {
     const newElement = document.createElement(`${element}`);
@@ -37,25 +39,36 @@ export function addEmailBtn() {
 export function rememberGuest() {
     const nameInput = document.getElementById('guestName');
     const userName = document.querySelector('.username');
-    nameInput.addEventListener('input', (e) => {
-        userName.textContent = e.target.value;
-        console.log(nameInput);
-    });
-
-    userName.innerHTML = `${nameInput.value}  ^`
+    userName.innerHTML = `${nameInput.value} ^`
     localStorage.setItem('name', nameInput.value);
-    nameInput.style.visibility = 'hidden';
-
+    if(nameInput.value){
+        nameInput.style.visibility = 'hidden';
+    }else{ window.alert('empty name field')}
+    
+    nameInput.value == 'Andreea&Parola' ?
+        document.querySelector('.contactBook').style.visibility = 'visible' : 
+        document.querySelector('.contactBook').style.visibility = 'hidden';
+    
     return nameInput.value;
 }
-export function rememberEmail() {
-    const emailInput = document.getElementById('email');
-    localStorage.setItem('email', emailInput.value);
+export function rememberContact() {
+    const contactInput = document.getElementById('email');
+    localStorage.setItem('contact', contactInput.value);
+    
+    contactInput.style.visibility = 'hidden';
 
-    emailInput.style.visibility = 'hidden';
-
-    //return emailInput.value;
+    const name = localStorage.getItem('name');
+    document.cookie =`${name}=${contactInput.value}`;
 }
+export function ContactBookUser(){
+    let cookies = document.cookie.split(';');
+    console.log(cookies)
+    cookies.forEach(cookie => {
+        const contactBook = document.querySelector('.contactBook');
+        contactBook.innerHTML += `<span>${cookie}</span>`;
+    })
+}
+
 export function renderLogOutBtn(element){
     const logOutBtn = renderBtn('logOut', 'Good bye');
     logOutBtn.addEventListener('click', (e) => {
@@ -66,7 +79,7 @@ export function renderLogOutBtn(element){
 }
 export function clearLocalStoage(){
     localStorage.removeItem('name');
-    localStorage.removeItem('email');
+    localStorage.removeItem('contact');
 }
 //                                codeDeck
 export function renderToolKit() {
@@ -79,20 +92,20 @@ export function renderToolKit() {
 }
 
 export function renderKitDetails() {
-    const kitDetails = document.createElement('div');
-    kitDetails.classList.add('kitDetails');
+    const kitDetails = renderElement('div', 'kitDetails');
 
-    kitDetails.innerHTML = `<h3>The Thingy</h3>
-                            <h4>The Informal School of IT – Web Development (JavaScript) 03.02.2020 – 13.07.2020</h4>
-                            <p> Web Concepts: How the web works, Client-Server architecture, protocols</p>
-                            <p> HTTP: fundamentals about the protocol: methods, status codes, headers, cookies and
+    kitDetails.innerHTML = `<h3>The Concepts</h3>
+                            <h4><b> Frontend Development (JavaScript) </b>
+                                <span> - The Informal School of IT (03.02.20 – 13.07.20)</span></h4>
+                            <p> <b> > Web Concepts: </b> How the web works, Client-Server architecture, protocols</p>
+                            <p> <b> > HTTP: </b> fundamentals about the protocol: methods, status codes, headers, cookies and
                                 sessions</p>
-                            <p> HTML and CSS: how to build a responsive User Interface with semantic HTML elements</p>
-                            <p> JS: how to use variables, primitive types, functions, hoisting, objects, scope,
-                                DOM, AJAX & Promises</p>
-                            <p> OOP in JavaScript: prototypes, classes and inheritance in JavaScript</p>
-                            <p> GIT: learned the principles and basic commands</p>
-                            <p> React JS: how modern JS applications work, React components, props, state, JSX</p>`
+                            <p> <b> > HTML and CSS: </b> how to build a responsive User Interface with semantic HTML elements</p>
+                            <p> <b> > JS: </b> how to use variables, primitive types, functions, hoisting, objects, scope,
+                                    DOM, AJAX & Promises </p>
+                            <p> <b> > OOP in JavaScript: </b> prototypes, classes and inheritance in JavaScript</p>
+                            <p> <b> > GIT: </b> principles and basic commands</p>
+                            <p> <b> > React JS: </b> how modern JS applications work, React components, props, state, JSX</p>`
 
     return kitDetails;
 }
@@ -109,18 +122,72 @@ export function renderFrameBtn(name, link) {
 
 }
 
-//                          Flower Field & Flower Item
+//                          Flower Field & Flower Items
 export function getTemperament(section) {
     const sectionArr = section.split(' ');
-    const isCold = sectionArr.includes('Cold')
-    console.log(sectionArr, isCold);
+    const isWarm = sectionArr.includes('Warm') || sectionArr.includes('Hot');
+    const isCold = sectionArr.includes('Cold') || sectionArr.includes('Cool');   // console.log(sectionArr, isCold);
     if (isCold) {
         return 'coldTemp';
-    } else {
+    } else if(isWarm) {
         return 'warmTemp';
+    } else {
+        return 'neutral';
     }
 }
-                                            //Mood
+export function getTaste(section){
+    const tastesDiv = renderElement('div', 'herbTasteDiv');
+    const herbTastes = section.split(' ');
+    //console.log(herbTastes)
+    const iconsArr = [];
+    if(herbTastes.includes('B')){
+        iconsArr.push('Bitter');
+       // renderTasteIcon('Bitter')
+    }
+    if(herbTastes.includes('S')){
+        iconsArr.push('Sweet');
+       // renderTasteIcon('Sweet');
+    }
+    if(herbTastes.includes('P')){
+        iconsArr.push('Pungent');
+        //renderTasteIcon('Pungent');
+    }
+    if(herbTastes.includes('So')){
+        iconsArr.push('Sour');
+        //renderTasteIcon('Sour');
+    }
+    if(herbTastes.includes('Sa')){
+        iconsArr.push('Salty');
+        //renderTasteIcon('Salty');
+    }
+    iconsArr.forEach(taste =>{
+        const tasteIcon = renderTasteIcon(taste);
+        console.log(tasteIcon);
+        tastesDiv.appendChild(tasteIcon);
+    })
+    return tastesDiv;
+
+
+
+    // const isBitter = herbTastes.includes('B');
+    // const isSweet = herbTastes.includes('S');
+    // const isPungent = herbTastes.includes('P');
+    // const isSour = herbTastes.includes('So');
+    // const isSalty = herbTastes.includes('Sa');
+
+    // if(isBitter) {
+    //     return 'Bitter';
+    // } else if(isSweet) {
+    //     return 'Sweet';
+    // } else if(isPungent) {
+    //     return 'Pungent';
+    // } else if(isSour) {
+    //     return 'Sour';
+    // } else if(isSalty) {
+    //     return 'Salty';
+    // }
+}
+                                                                        //Mood
 export function changeCSS(cssFile, cssLinkIndex) {
 
     var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
@@ -138,9 +205,10 @@ export function getRandom(arr){
     const randomEl = arr[Math.floor(Math.random() * arr.length)];
     return randomEl;
 }
+//                                  Pause  /   Breath Feature
 export function renderBreathDetails(breath){
     const breathDiv = renderElement('div', 'breathDiv');
-    breathDiv.innerHTML= `<h2>${breath.name}</h2>
+    breathDiv.innerHTML= `<h2><b>try</b> ${breath.name}</h2>
                           <p>${breath.expl}</p>
                           <p><b> Best time:</b> ${breath.bestTime[0]}</p>
                           <p><b> Best results:</b> ${breath.bestResults}</p>
@@ -157,18 +225,14 @@ export function renderBreath(domEl, need, breath){
     }else if(need == 'yang'){
         const randomYang = getRandom(breath);
         const yangBreath = renderBreathDetails(randomYang);
-        // const gif = renderElement('img', 'yGif');
-        // if(breath.gif){
-        //     gif.setAttribute('src', breath.gif);
-        //     yangBreath.appendChild(gif);
-        // }
         
         domEl.appendChild(yangBreath)
     }
 }
 export function renderBar(domEl, need){
     const pauseBarWrapper = renderElement('div', 'pauseBarWrapper');
-    const startPause = renderBtn('startPause','Start');
+    // const startPause = renderBtn('startPause','Start');
+    const startPause = renderElement('button', 'startPause','./images/bells/purpleLight.png');
     startPause.addEventListener('click',() => {
         const deLoad = document.querySelector('.pauseDeLoading');  
         const time = document.querySelector('.pauseTime').value;
@@ -180,7 +244,7 @@ export function renderBar(domEl, need){
         }
        
     })
-    pauseBarWrapper.innerHTML = `<b>Time: </b><input type='number'class='pauseTime' placeholder= '1' /> minute(s)
+    pauseBarWrapper.innerHTML = `<b>Pick a time: </b><input type='number'class='pauseTime' placeholder= '1' /> minute(s) and ring the bell to start.
                                 <div class='pauseBarContainer'>
                                 <div class='pauseDeLoading'></div>
                                 </div>`
@@ -189,16 +253,17 @@ export function renderBar(domEl, need){
 }
 export function deLoading(element, time){   
     let width = 100;
-    
     let id = setInterval(frame, time);
     function frame() {
         if (width <= 0) {
             clearInterval(id);
         } else {
             width--; 
-            element.style.width = width + '%'; 
-            
-           // element.innerHTML =  width * 1  + '%'+ newPath + 'cooling';
+            element.style.width = width + '%';
+            element.style.backgroundColor = '#fe930a';
+            element.parentElement.style.backgroundColor = '#0ecbd7' 
+            // element.innerHTML =  'Cooling'; 
+            // element.style.textAlign = 'right'
         }
     }
 }
@@ -210,14 +275,124 @@ export function loading(element, time){
         if (width >= 100) {
         clearInterval(id);
         } else {
-        width++; 
-        path+='..'
+        width++;                                        //increase width, create container fitting path
+        width % 2 == 0 ? path += '..' : path += '.';
         element.style.width = width + '%'; 
-        element.innerHTML = 'Energizing'+path + width * 1  + '%';
+        element.style.backgroundColor = '#fe930a';         // change bar css
+        element.parentElement.style.backgroundColor = '#0ecbd7' 
+        element.innerHTML = 'Energizing'+ path + width * 1  + '%';
         }
     }
     console.log('loading')
 }
+
+//                                     Elements    
+export function renderQiEl(domEl, element){
+    const elementDiv = renderElement('div', 'elementDiv');
+    elementDiv.style.backgroundColor = element.color[0];
+    elementDiv.style.color = element.color[1];
+    elementDiv.innerHTML = `<div><h3 class='elemTitle'>${element.name}: <b> ${element.taste}</b></h3> 
+                            <p><b>${element.organs}</b></p>
+                            <p class='elEmotion'>Emotion: ${element.emotion}</p></div>
+                            <p class='elShort'>${element.short}</p>`
+    domEl.appendChild(elementDiv);
+}
+export function renderQiDiv(domEl, array){
+    const studyDiv = renderElement('div', 'qiStudy');
+    array.forEach(element => {
+        const qiDiv = renderElement('div', 'studyDiv');
+        qiDiv.innerHTML = `<img src='${element.imgSrc}' />
+                           <p> ${element.title} </p>`
+        studyDiv.appendChild(qiDiv);
+    })
+
+    domEl.appendChild(studyDiv);
+}
+
+export function renderYoQiPractice(domEl){
+    const practiceDiv = renderElement('div','practiceDiv');
+    practiceDiv.innerHTML =`
+                            <div class='practiceLeft'>
+                                <h3>.The Practice: </h3>
+                                <p><b>BaDuanJin </b>- Eight Pieces of Silk Brocade</p>
+                                <p><b>Wu Xing </b>- Five Elements Harmony</p>
+                                <p><b>Shibashi </b>- 18 Forms</p>
+                                <p><b>Yi Jin Jing</b></p>
+                                <p><b>WuJi</b></p>
+                            </div>
+                            <div class='practiceRight'>
+                                <p><b>Dharana</b></p>
+                                <p><b>PratyAhara</b></p>
+                                <p><b>Shavasana </b>relaxation</p>
+                                <p><b>Pranayama </b>- Breathing techniques</p>
+                                <p><b>Asanas - Surya namaskar </b>-Sun Salutation</p>
+                            </div>`
+    domEl.appendChild(practiceDiv);
+}
+
+//                                                      teaPage
+export function renderHerbsLeft(domEl){
+    const teaLeft = renderElement('div', '.herbsLeft');
+    teaLeft.innerHTML = `<h3> The Lenses:</h3>
+                        <p><a href='#'> Temperament </a> </p>
+                        <p><a href='#'> Taste </a></p>
+                        <p><a href='#'> Meridians afinity </a></p>
+                        <p><a href='#'> Skill / Antagonists </a></p> 
+                        <p><a href='#'> Land's knowledge </a></p>`
+    domEl.appendChild(teaLeft);
+}
+
+export function renderTasteIcon(taste){
+    const tasteIcon = renderElement('div','tasteIcon');
+    switch(taste){
+        case 'Bitter':
+            tasteIcon.style.backgroundColor = '#B8CBA1';
+            break;
+        case 'Sweet':
+            tasteIcon.style.backgroundColor = '#F9C5E7';
+            break;
+        case 'Pungent':
+            tasteIcon.style.backgroundColor = '#FCD4BE';
+            break;
+        case 'Sour':
+            tasteIcon.style.backgroundColor = '#fdff83';
+            break;
+        case 'Salty':
+            tasteIcon.style.backgroundColor = '#a2f3ea';
+            break;
+    }
+    return tasteIcon;
+}
+// export function renderTaste(domEl, taste, text){
+//     const tasteDet = renderElement('div', 'taste');
+//     const tasteIcon = renderTasteIcon( taste)
+//     tasteDet.innerHTML = ` <span> ${tasteIcon()}</span>
+//                             <p><span>${taste}:</span> ${text}</p>`
+    
+//     domEl.appendChild(tasteDet);
+    
+// }
+export function renderTastes(domEl){
+    const tastesDiv = renderElement('div', 'tastesDiv');
+    tastesDiv.innerHTML = `<p>The Five Elements theory states that the taste of herbal ingredients is a key determinant of their action </p>`;
+    console.log(tasteDetails)
+    
+    tasteDetails.forEach(tasteObj => {
+        const tasteDet = renderElement('div', 'taste');
+        const tasteIcon = renderTasteIcon( tasteObj.taste);
+        const tasteText = renderElement('div','tasteText');
+        
+        tasteText.innerHTML = `<p><b>${tasteObj.taste}</b> ${tasteObj.action}</p>
+                              <p>${tasteObj.afinity}</p>`
+
+        tasteDet.appendChild(tasteIcon);
+        tasteDet.appendChild(tasteText);
+        
+        tastesDiv.appendChild(tasteDet);
+    })
+    
+    domEl.appendChild(tastesDiv);
+}   
 
 
 

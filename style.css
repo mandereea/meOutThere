@@ -20,10 +20,21 @@ body{
     font-family: 'robotoL';
     font-variant: small-caps;
 }
-/*                                       Header css */
+/*                                          contactBook         */
+.contactBook{
+    visibility: hidden;
+    padding:2em;
+    background-color: #504e50;
+    color: rgb(252, 242, 233);
+    margin-top:3em;
+}
+.contactBook span{
+    margin-right: 2em;
+}
+/*                                                                   Header css */
 header {
     width:100%;
-    margin-top: 1em;
+    margin-top: 2em;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -56,7 +67,7 @@ header > a:hover{
     font-weight: normal;
     font-family: robotoR;
     color:#ec994c;
-    font-size:x-large;
+    font-size: larger;
     text-decoration:underline;
 }
 .navBar {
@@ -69,11 +80,21 @@ header > a:hover{
     align-items: center;
 }
 .navLinks{
-    background-image: url('./images/navLinks.png');
-    padding-left: 1.3em;
+    /* background-image: url('./images/navLinks.png'); */
+    width: 33%;
+    justify-content: space-evenly;
+    /* padding-left: 1.3em; */
+    display: flex;
+    flex-flow: row wrap;
 }
 .navLinks > button > a {
     margin-left: 1.5em;
+}
+.navLinks  button {
+    width: 33.33%;
+}
+.codeBtn{
+    padding-left: 2.3em;
 }
 .userDiv{
     background-image: url('./images/navBtns.png');
@@ -102,12 +123,30 @@ header > a:hover{
     background-color: #ec994c;
     padding-left: 1.5em;
 }
-/*                           Guest section */
+/*                                                 contactSection        */
+.contactDetails{
+    width: 22%;
+    align-self: flex-end;
+    padding:2em;
+    background-color: rgba(116, 78, 124,0.8);
+    color: #d0dcdd;
+}
+.contactDetails > p > span{
+    color:rgb(245, 244, 239);
+    margin-left:0.5em;
+}
+.contactDetails > p > a{
+    color: #e7c7a9;
+    font-variant: normal;
+    margin-left: 0.3em;
+}
+/*                                                               Guest section */
 .username{
     background-color: rgba(245, 249, 250,0);
     color:#242322;
     font-size: large;
     font-variant: normal;
+    padding:0;
 }
 .guestForm{
     position: absolute;
@@ -143,17 +182,42 @@ input {
     border-width: 0 0 1px;
     border-color: #744e7c;
     padding:0.3em 0;
-    background-color: rgb(245, 245, 237);
+    background-color: rgb(236, 235, 228);
     text-align: center;
     
 }
 input:focus{
-    background-color: rgb(236, 235, 228);;
+    background-color: rgb(221, 217, 205);;
 }
 .emailForm{
     display: flex;
     flex-direction: column;
 }
+.logOut{
+    color: #585b5c;
+    background-color: rgb(236, 235, 228);
+    margin-left:1em;
+}
+.logOut:hover{
+    color:#ec994c;
+}
+/*                                      sideDoors   */
+.sideDoors{
+    width:5%;
+    position: sticky;
+    top: 25em;
+    display: flex;
+    flex-direction: column;
+    
+}
+.sideDoors > a{
+    margin-bottom:2em;
+    background-color: black;
+    color:red;
+   
+    padding:1em;
+}
+/*                                      flowerSwitch    */
 .flowerSwitch{
     background-size: cover;
     background-position: center;
@@ -165,24 +229,31 @@ input:focus{
     padding: 0.3em;
     cursor: pointer;
 }
-/*                                      pauseFeature  */
+.flowerSwitch:hover{
+    width:1.9em;
+    height:1.9em;
+}
+/*                                                                pauseFeature  */
 .pauseBtn{
-    width: 5%;
-    background-color: rgba(0, 255, 255,0);
-    
+    font-size: large;
+    font-weight: 900;
+    padding: 0.5em 1em;
+    background-color: rgba(8, 133, 172,0);
+    color:rgba(0, 255, 255,0);
+    border-radius: 6px;
     position:absolute;
     top:0.5em;
-    left:77%;
+    left:33%;
 }
 .pauseBtn:hover{
-    background-color: rgba(0, 255, 255,1);
+    background-color: rgba(8, 133, 172,0.8);
+    color:#f5f5ed
 }
 .pauseContainer{
     position:absolute;
-    top:9em;
-    left:15%;
-    width:70%;
-    /* min-height: 33em; */
+    top:9.8em;
+    left:23%;
+    width:54%;
     background-color: rgba(250, 253, 253, 0.95);
     padding:2em;
 
@@ -208,10 +279,13 @@ input:focus{
 .yinBtn,
 .yangBtn{
     width: 5em;
-    background-color: #0ecbd7;
+    padding:1em;
+    background-color: rgba(14, 203, 215,0.9);
+    border-radius:6px;
+    font-size: larger;
 }
 .yangBtn{
-    background-color: #fe930a;
+    background-color: rgba(254, 147, 10,0.9);
 }
 .pauseContainer > h3, 
 .pauseContainer > p {
@@ -223,14 +297,32 @@ input:focus{
 .breathDiv > p{
     line-height: 2em;
 }
-.breathDiv  h2{
+.breathDiv > h2{
     font-family: 'robotoR';
     color: #363633;
     font-weight: 500;
+    text-align: center;
+    margin-bottom: 1em;
+}
+.breathDiv > h2 > span{
+    font-size: medium;
+    font-variant: normal;
 }
 .pauseTime{
     width: 3em;
-    margin-bottom: 1em;
+    margin: 1em;
+    
+}
+.startPause{
+    position: absolute;
+    left: 55%;
+    bottom: 7em;
+    background-color: rgba(245, 245, 237,0);
+    background-size: cover;
+    background-position: center ;
+    width: 2em;
+    height:2.3em;
+   padding:0 0.3em;
 }
 .pauseContainer img{
     width: 50%;
@@ -238,17 +330,18 @@ input:focus{
 }
 .pauseBarContainer{
     width:100%;
-    height: 5em;
+    height: 3em;
     
-    background-color: #0ecbd7;
+    background-color: rgb(245, 245, 237); ;
 }  
 .pauseDeLoading{
     width:50%;
-    height:5em;
-    background-color: #fe930a;
-    padding:1.5em;
+    height:3em;
+    background-color: rgb(245, 245, 237); ;
+    padding:0.7em 0.4em;
+    color:white;
 }
-/*                                       hiPage */
+/*                                                                     hiPage */
 .hiApp{
     margin-top: 2em;
     text-align: center;
@@ -272,11 +365,12 @@ input:focus{
 .spanBreath{
     position: relative;
     display: inline-block;
+    
     color:#744e7c;
     cursor:pointer;
 }
 .spanFlower{
-    color:#92d00d;
+    color:#67ad2d;
 }
 .spanBreath{
     color: #0885ac;
@@ -294,16 +388,32 @@ input:focus{
     z-index:1;
     margin-left:0.5em;
 }
+.codeTalk{
+    background-color: #a57dad;
+    color: white;
+    padding: 0.1em;
+    outline:none;
+    border:none;
+}
+.codeTalk:focus{
+    background-color: #744e7c;
+}
 .spanFlower .tooltiptext{
     background-color:#92d00d;
 }
 .spanBreath .tooltiptext{
     background-color:#0885ac;
 }
+.tooltip{
+    text-decoration:underline;
+}
+.tooltip:hover{
+    color: #EC6E4C;
+}
 .tooltip:hover .tooltiptext {
     visibility: visible;
   }
-/* doorsPage */
+                                                           /* doorsPage */
 .doorsDiv {
     width:90%;
     margin:0 auto; 
@@ -325,42 +435,64 @@ input:focus{
     padding: 1em;
     margin-bottom: -1em;
     background-color: #744e7c;
-    color:white;
+    color:rgb(244, 250, 225);
+    position:relative;
 }
 .doorScreen > h3 {
     font-size: large;
     font-variant: small-caps;
+    margin-bottom: 1em;
+}
+.doorScreen p {
+    margin-bottom: 0.5em;
+}
+.doorScreen a{
+    font-weight: 600;
+    background-color: rgba(245, 245, 237, 0.5);
+    color: #221c22;
+    letter-spacing: 0.2em;
+    padding: 0.6em;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
 }
 .teaD {
     background-color: #92d00d;
+    color: #201d20;
 }
 .yqD {
     background-color: #0ecbd7;
+    color: #031435;
 }
-/* codeDeck */
-.codeDeck{
-    width:75%;
+                                                                          /* codeDeck */
+.codeDeck,
+.teaPage{
+    width:74%;
     margin:0 auto;
     display:flex;
     flex-flow:column wrap;
+    margin-top: 2em;
 }
 .codeDeck > a {
     color:black;
 }
 .studyContainer {
-    margin-top: 3em;
+   
     display: flex;
     justify-content: space-between;
 }
 .toolKit {
-    width: 27%;
+    width: 26.5%;
 }
 .toolKit img{
     max-width:150%;
 }
 .toolKit h3,
 .kitDetails h3,
-.practiceWrapper h3{
+.practiceWrapper h3,
+.practiceLeft h3,
+.teaPage h3,
+.yqPage h3{
     color: #343135;
     font-family: 'robotoR';
     font-size: medium;
@@ -370,18 +502,22 @@ input:focus{
 .kitDetails{
     margin-right:2em;
 }
-.kitDetails h4{
-    margin-bottom: 1em;
-}
+
 .kitDetails > h4{
     margin-bottom: 1em;
     font-size: medium;
-    
-    color: #363633;
+    font-variant: normal;
+    color: #391541;
+}
+.kitDetails >h4 >span{
+    font-variant:normal;
+    font-size: 0.9em;
+   font-weight: normal;
 }
 .kitDetails > p{
     margin-bottom: 0.7em;
-    font-size: small;
+    margin-left:1em;
+    font-size: 0.8em;
     /* font-family: 'robotoL';
     letter-spacing: 0.5px;
 } */
@@ -416,6 +552,7 @@ iframe{
     background-color: rgba(14, 203, 215,0);
     cursor: pointer;
     position: absolute;
+    color:#38203d;
     top: 3%;
     right: 2%;
     padding: 0.9em; 
@@ -441,7 +578,7 @@ iframe{
 }
 
 .titleDiv{
-    background-color: rgba(14, 203, 215, 0.8);
+    background-color: rgb(132 120 137 / 80%);
     width: 100%;
     position: relative;
     top: 13.5em;
@@ -452,7 +589,7 @@ iframe{
     justify-content: space-between;
 }
 .titleDiv > h4 {
-    color: white;
+    color: #faf5fa;
     width: 70%;
 }
 .infoBtn{
@@ -460,10 +597,10 @@ iframe{
     height:1.5em;
     padding:0.5em;
     background-size: cover;
-    background-color: #0ecbd7;
+    background-color: rgba(211, 202, 151,0);
 }
 .infoDiv {
-    background-color: #0ecbd7;
+    background-color: rgb(14, 203, 215);
     color:rgb(252, 252, 252);
     
     position: relative;
@@ -472,8 +609,57 @@ iframe{
     padding:1em;
 
 }
-
-/* FlowersField  /  FlowerDiv */
+/*                                                          YoQi         */
+.yqPage{
+    width: 76.54%;
+    margin-left: 12.34%;
+    margin-top: 2em;
+    display: flex;
+    flex-flow: column wrap;
+}
+.qiStudy{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    
+}
+.studyDiv {
+    width: 21%;
+    text-align: center;
+    font-size: 0.9em;
+}
+.studyDiv img{
+    margin-bottom:1em;
+}
+.practiceDiv{
+    margin-top: 2em;
+    padding: 0.3em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.practiceRight{
+    text-align: right;
+    align-self: flex-end;
+}
+.practiceLeft > h3{
+    margin-bottom:1em;
+}
+.elementsWrapper{
+    width:75%;
+    margin: 0 auto;
+    
+}
+.elementDiv{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    padding:1em;
+}   
+.elementDiv > p{
+    width: 73%;
+}                                                         /* FlowersField  /  FlowerDiv */
 .flowerBtn {
     background-size: cover;
     opacity:0.9;
@@ -488,7 +674,7 @@ iframe{
     left: 33%;
     z-index:2;
     width:34%;
-    background-color:rgba(245, 245, 237, 0.8);;
+    background-color:rgba(255, 255, 245, 0.8);
     display:flex;
     flex-flow: column wrap;
     align-items: center;
@@ -546,7 +732,10 @@ iframe{
     color:white;
 }
 .warmTemp{
-    background-color: rgba(236, 153, 76,0.8);
+    background-color: rgba(236, 153, 76,1);
+}
+.neutral{
+    background-color: rgb(79, 153, 77);
 }
 .historyDiv > p,
 .dayFactDiv > p{
@@ -566,4 +755,274 @@ iframe{
     background-position: center;
     background-size: cover;
     
+}
+                                                /*                      WeatherApp          */
+.weatherWrapper{
+    width:100%;
+    height: 5em;
+    position: absolute;
+    top:0;
+    right:0;
+    z-index:-1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}
+.todayContainer{
+    width:33%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+    background-color: #f5eada; 
+}
+.todayContainer > div{
+    margin:0;
+    
+    height:5em;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+.weatherImgDiv{
+    background-color: rgba(116, 78, 124,0.8);
+    
+}
+.todayContainer >div > img{
+    width:4em;
+    margin:0;
+    padding:0;
+    margin-top:-0.5em;
+    
+}
+.todayContainer >div > p{
+    font-size: medium;
+    color: rgb(116, 78, 124);
+    margin:0;
+    padding:0;
+}
+.todayContainer .weatherImgDiv > p{
+    margin-top:-0.5em;
+    color:white;
+    padding: 0 2em;
+}
+.weatherBtns{
+    display:flex;
+    flex-direction: column;
+}
+.weatherBtns > button{
+    background-color: rgba(116, 78, 124,0.8);
+    width: 90%;
+    padding:0.5em;
+    margin:0.3em;
+}
+.dailyWrapper,
+.dayContainer{
+    margin-top:0.5em;
+    width: 33%;
+    align-self: flex-end;
+    background-color: #f5eada;
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.dayShortDiv {
+    width: 12%;
+    padding: 1em;
+    font-size: small;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.dayShortDiv img{
+    width: 100%;
+}
+.arrow {
+    margin-top:1em;
+    border: solid #EC6E4C;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+.down{
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.up{
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    margin-left:2em;
+}
+.dayLeft,
+.dayIcon,
+.dayRight{
+    width:30%;
+    padding: 0 0.3em;
+    font-size: small;
+    text-align: center;
+    display:flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+.dayLeft >h4,
+.dayRight >h4 {
+    margin-bottom:0.5em;
+    ;
+}
+.dayIcon img{
+    width:60%;
+}
+.dayIcon h3{
+    font-variant: normal;
+    margin-top: -1em;
+}
+.no-details{
+    margin: 1em;
+}
+.rise{
+    color: #EC6E4C;
+}
+.set{
+    color:rgb(120, 70, 139);
+}
+.warmer{
+    color: #EC6E4C;
+}
+.colder{
+    color:rgb(5, 121, 199);
+}
+
+/*                                                              TeaPavilion     */
+
+.teaTop{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    margin-bottom: 2em;
+}
+.teaPage >h3 > span{
+    font-variant: normal;
+    padding: 1em;
+    margin-left: 19%;
+}
+.herbsLeft >p{
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+}
+.herbsLeft a{
+    font-variant: normal;
+    color: #38203d;
+}
+.herbsRight{
+    width: 76%; 
+    margin-right: -2em;
+    background-color: rgb(245, 245, 237);;
+}
+
+.teaShelf{
+    width: 103%;
+    align-self: flex-end;
+    margin-right: -2em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.herbDiv{
+    width:16%;
+    height:16em;
+    margin-bottom:1em;
+    position:relative;
+    background-color: rgb(210, 224, 186);
+}
+.herbDiv img{
+    width:100%;
+    min-height: 70%;
+    max-height:90%;
+}
+.shelfHerb{
+    position:absolute;
+    width:100%;
+    bottom:0;
+    background-color: rgb(226, 240, 210);
+    color: #343135;
+    
+}
+.shelfHerb h4{
+    font-variant: normal;
+    font-size: larger;
+    padding: 0.5em;
+}
+.herbTemp{
+    width: 100%;
+    margin:0;
+    padding: 0.5em;
+}
+.herbTasteDiv{
+    background-color: rgba(255, 255, 253 , 0.6);
+    position: absolute;
+    top: 11.4em;
+    right:0;
+    display: flex;
+    flex-direction: row;
+    
+    padding: 0.6em 0 0.6em 0.5em;
+}
+.herbTasteDiv > div{
+    padding:0;
+    margin:0;
+    width:1em;
+    height:1em;
+    margin-right: 0.5em;
+}
+.tastesDiv{
+    padding:1em;
+    display: flex;
+    flex-flow: column wrap;
+    background-color: rgb(250, 250, 241);
+}
+.taste{
+    /* margin-top:0.5em; */
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tasteIcon{
+    width:1.5em;
+    height:1.5em;
+    border-radius: 50%;
+}
+.tasteText{
+    width: 95%;
+    font-size: medium;
+    color: #3f3d3d;
+}
+.herbDetDiv{
+    background-color: #f5f8f0;
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    /* position: absolute;
+    z-index: 1; */
+
+}
+.herbDetDiv img{
+    width: 25%;
+}
+.herbDivText{
+    width: 73%;
+}
+.herbDetDiv h5{
+    font-variant: normal;
+    font-size: larger;
+}
+.herbDivText p{
+    margin-top: 0.5em;
 }

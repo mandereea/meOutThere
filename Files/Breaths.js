@@ -9,7 +9,7 @@ export const yinBreaths = [
     },
     {
         name:'The Long Exhale',
-        expl:'This 1:2 breathing practice, which involves gradually increasing your exhalation until it is twice the length of your inhalation.',
+        expl:'This 1:2 practice involves gradually increasing your exhalation until it is twice the length of your inhalation.',
         benefits:'When practiced correctly, 1:2 breathing increases lung capacity, eliminates volatile wastes from the lungs while calming and nurturing the nervous system. It cools the body and can reduce insomnia, sleep disturbances, and anxiety.',
         bestTime:['Bedtime, insomnia nights, anytime to calm stress/anxiety', 'Before bedtime to help support sleep, in the middle of the night when you\'re struggling with insomnia, or at any time of the day to calm stress or anxiety. (In general, it\'s best to avoid practicing 1:2 breathing first thing in the morning unless you\'re experiencing anxiety. The relaxing effects of the practice tend to make it more difficult to get up and go on with your day.)'],
         bestResults:'6 to 12 breaths',

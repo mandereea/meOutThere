@@ -1,5 +1,3 @@
-//import {} from '../../images/codePractice/aWise.png'
-
 import { renderElement } from '../../utilitary.js';
 
 class CodeProject{
@@ -38,13 +36,7 @@ class CodeProject{
     }
     renderTitleDiv(title){
         const infoDiv = renderElement('div', 'titleDiv');
-        // document.createElement('div');
-        // infoDiv.classList.add('titleDiv');
         infoDiv.innerHTML = `<h4 class='projDetails'>${title}</h4>`;
-
-        // const infoBtn = renderBtn('../../images/codePractice/icons/infoIcon.png', 'infoBtn');
-        // const playBtn = renderBtn('../../images/codePractice/icons/play.png', 'infoBtn');
-        // const gitBtn = renderBtn('../../images/codePractice/icons/gitIcon.png', 'infoBtn');
 
         const infoBtn = renderElement('button', 'infoBtn', '../../images/codePractice/icons/infoIcon.png');
         const playBtn = renderElement('button', 'infoBtn','../../images/codePractice/icons/play.png');
@@ -67,10 +59,9 @@ class CodeProject{
         return infoDiv;
     }
     render(){
-        const projDiv = document.createElement('div');
-        projDiv.classList.add('projDiv');
+        const projDiv = renderElement('div', 'projDiv');
         projDiv.style.backgroundImage = `url(${this.project.imgSrc})`
-        // projDiv.innerHTML = `<img src=${this.project.imgSrc} />`
+        
         const infoDiv = this.renderTitleDiv(this.project.title,this.project.details);
         projDiv.appendChild(infoDiv);
         
