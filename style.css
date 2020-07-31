@@ -45,11 +45,12 @@ a{
     text-decoration:none;
     font-variant: small-caps;
     color:white;
+    cursor: pointer;
 }
 button{
     border:none;
     outline:none;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 1.5em 1em;
     font-variant: small-caps;
     cursor: pointer;
@@ -83,7 +84,6 @@ header > a:hover{
     /* background-image: url('./images/navLinks.png'); */
     width: 33%;
     justify-content: space-evenly;
-    /* padding-left: 1.3em; */
     display: flex;
     flex-flow: row wrap;
 }
@@ -105,6 +105,7 @@ header > a:hover{
 .userDiv{
     width:33%;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-around;
     font-size: 1em;
 }
@@ -167,7 +168,6 @@ header > a:hover{
     color: #744e7c;
     padding:1em 2em;
     font-variant: normal;
-    /* background-color: rgb(245, 245, 237); */
     background-color: rgb(245, 245, 237);
     cursor: pointer;
 }
@@ -201,26 +201,11 @@ input:focus{
 .logOut:hover{
     color:#ec994c;
 }
-/*                                      sideDoors   */
-.sideDoors{
-    width:5%;
-    position: sticky;
-    top: 25em;
-    display: flex;
-    flex-direction: column;
-    
-}
-.sideDoors > a{
-    margin-bottom:2em;
-    background-color: black;
-    color:red;
-   
-    padding:1em;
-}
 /*                                      flowerSwitch    */
 .flowerSwitch{
     background-size: cover;
     background-position: center;
+    background-color: rgba(253, 251, 249, 0);
     position: absolute;
     top:2%;
     right:48%;
@@ -477,7 +462,6 @@ input:focus{
     color:black;
 }
 .studyContainer {
-   
     display: flex;
     justify-content: space-between;
 }
@@ -556,7 +540,7 @@ iframe{
     top: 3%;
     right: 2%;
     padding: 0.9em; 
-    transform: translate(0%, -50%); */
+    transform: translate(0%, -50%); 
   }
   
 .practiceWrapper{
@@ -659,7 +643,8 @@ iframe{
 }   
 .elementDiv > p{
     width: 73%;
-}                                                         /* FlowersField  /  FlowerDiv */
+}                                 
+                        /* FlowersField  /  FlowerDiv */
 .flowerBtn {
     background-size: cover;
     opacity:0.9;
@@ -672,7 +657,7 @@ iframe{
     position: absolute;
     top:8em;
     left: 33%;
-    z-index:2;
+    z-index:3;
     width:34%;
     background-color:rgba(255, 255, 245, 0.8);
     display:flex;
@@ -735,7 +720,7 @@ iframe{
     background-color: rgba(236, 153, 76,1);
 }
 .neutral{
-    background-color: rgb(79, 153, 77);
+    background-color: rgba(79, 153, 77,0.9);
 }
 .historyDiv > p,
 .dayFactDiv > p{
