@@ -42,6 +42,10 @@ class CodeProject{
         const playBtn = renderElement('button', 'infoBtn','../../images/codePractice/icons/play.png');
         const gitBtn = renderElement('button', 'infoBtn','../../images/codePractice/icons/gitIcon.png');
 
+        // const infoBtn = renderElement('button', 'infoBtn');
+        // const playBtn = renderElement('button', 'playBtn');
+        // const gitBtn = renderElement('button', 'gitBtn');
+
         infoBtn.addEventListener('click', (e)=>{
             this.handleInfoBtn(e);
         });

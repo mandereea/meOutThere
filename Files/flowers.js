@@ -36,7 +36,7 @@ export const flowers = [
         }
     },
     {
-        name: ['ColsFoot','Tussilago farfara, Podbal'],
+        name: ['ColtsFoot','Tussilago farfara, Podbal'],
         imgSrc: '../../images/flowers/Tussilago.jpg',
         temperament:['Warm and Moist', [1, 1]],
         history:['Over 2500 years of being appreciated','His names in Latin, ancient Greek and old Chinese all mean casting-away-cough.','In Paris, the Coltsfoot flowers used to be painted on the doorpost of an apothecary\'s shop','With it\'s anticough powers, it went from Morrocco to Svalbard, over the Polar Cirlce. And everywhere in between, east and west'],
@@ -132,15 +132,15 @@ export const flowers = [
         }
     },
     {
-        name:['Angelica',', Angelica'],
+        name:['Angelica','Angelica Archangelica, Angelica'],
         imgSrc: '../../images/flowers/angelica.jpg',
-        temperament: ['Warm ',[1, ]],
+        temperament: ['Warm, Tonic',[1, 0]],
         history: ['400 B.C. Greece',''],
-        dayFact: [],
+        dayFact: ['In eastern medicine, it\'s surpassed by only gingseng as a vitality builder'],
         description: {
-            taste:['Sweet, Bitter','S B'],
-            skill:'',
-            enemies:''
+            taste:['Pungent, Sweet','P S'],
+            skill:'Use to rebuild and circulate. Gates Keeper in early stages of Exterior invasion to disperse Wind and flood away intruders. ',
+            enemies:'Cold, Wind, dampCold obstructions'
         }
     },
     {

@@ -1,5 +1,5 @@
 import { renderElement, rememberGuest, renderGuestBtn, renderFriendBtn, addEmailBtn, rememberContact, renderBtn } from '../../utilitary.js';
-import { rememberFriend } from '../../Files/Friends.js'
+
 // import { RegisterForm } from './RegisterForm.js';
 
 

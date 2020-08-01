@@ -3,23 +3,23 @@ export const projects = [
             "imgSrc": "../../images/codePractice/aWise.png",
             "title": "HTML elements practice",
             "details": "My first! At the foot of the mountain, while nothing is being said, radio buttons, check-boxes and alike are being learned.",
-            "viewLink": "",
-            "gitLink": ""
+            "viewLink": "https://mandereea.github.io/FirstStep/index.html",
+            "gitLink": "https://github.com/mandereea/FirstStep"
         },
         {
             "imgSrc": "../../images/codePractice/ChaiPg.png",
             "title": "CSS layouting practice",
             "details": "Nothing really works yet, as JS is still in the future at this point. Just the fun of sizes, colors and immaterial legos being moved around",
-            "viewLink": "",
-            "gitLink": ""
+            "viewLink": "https://mandereea.github.io/SecondStep/layout.html",
+            "gitLink": "https://github.com/mandereea/SecondStep"
         },
         {
 
             "imgSrc": "../../images/codePractice/mindSyst.png",
             "title": "At last, JS practice!",
             "details": "Welcome into the future! Use your cnp and birth date to enroll in the Collective Mind SyStem. The data has to be either real, or precisely faked.",
-            "viewLink": "",
-            "gitLink": ""
+            "viewLink": "https://mandereea.github.io/ThirdStep/tema0.html",
+            "gitLink": "https://github.com/mandereea/ThirdStep"
         },
         {
 
@@ -27,7 +27,7 @@ export const projects = [
             "title": "AJAX practice",
             "details": "Invent a game that hasn't been heard of before, edit or delete what's already been invented. While going round and round in JS model, promises, async/await circles, I've got to practice fetching and learned about JS fatigue.",
             "viewLink": "https://mandereea.github.io/GameApp1/AsyncAwait/async.html",
-            "gitLink": ""
+            "gitLink": "https://github.com/mandereea/GameApp1"
         },
         {
             "imgSrc": "../../images/codePractice/player1.png",
@@ -54,7 +54,7 @@ export const projects = [
             "imgSrc": "../../images/codePractice/ThisPractice.png",
             "title": "THIS practice",
             "details": "We are in it, in This.onGoing practice",
-            "viewLink": "",
+            "viewLink": "https://mandereea.github.io/MeOutThere/index.html",
             "gitLink": "https://github.com/mandereea/MeOutThere"
         }
 ]

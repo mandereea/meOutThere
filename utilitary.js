@@ -208,13 +208,18 @@ export function getRandom(arr){
 //                                  Pause  /   Breath Feature
 export function renderBreathDetails(breath){
     const breathDiv = renderElement('div', 'breathDiv');
+    const gif = document.createElement('img');
+    gif.src = breath.gif;
+    
     breathDiv.innerHTML= `<h2><b>try</b> ${breath.name}</h2>
                           <p>${breath.expl}</p>
                           <p><b> Best time:</b> ${breath.bestTime[0]}</p>
                           <p><b> Best results:</b> ${breath.bestResults}</p>
                           <p><b> Benefits: </b> ${breath.benefits}</p>
-                          <p><b> Technique: </b> ${breath.technique}</p>
-                          <img src=${breath.gif} />`
+                          <p><b> Technique: </b> ${breath.technique}</p>`
+    if(breath.gif){
+        breathDiv.appendChild(gif);
+    }
     return breathDiv;
 }  
 export function renderBreath(domEl, need, breath){
@@ -251,41 +256,66 @@ export function renderBar(domEl, need){
     pauseBarWrapper.appendChild(startPause)
     domEl.appendChild(pauseBarWrapper);
 }
-export function deLoading(element, time){   
+export function deLoading(element, time){ 
+    playSound();  
     let width = 100;
+    let path = '';
     let id = setInterval(frame, time);
     function frame() {
         if (width <= 0) {
             clearInterval(id);
+            playSound();
         } else {
-            width--; 
+            width-- ; 
+            width % 2 == 0 ? path += ')' : path +='o';
             element.style.width = width + '%';
-            element.style.backgroundColor = '#fe930a';
-            element.parentElement.style.backgroundColor = '#0ecbd7' 
-            // element.innerHTML =  'Cooling'; 
-            // element.style.textAlign = 'right'
+            element.style.backgroundColor = '#ff5c00';
+            element.parentElement.style.backgroundColor = '#aae4f9';
+            element.innerHTML =  'C' + path + 'l'; 
+            element.style.textAlign = 'right';
+            element.style.color = '#ff5c00';
         }
     }
 }
 export function loading(element, time){
+    playSound();
     let width = 0;
     let path = '';
     let id = setInterval(frame, time);
     function frame() {
         if (width >= 100) {
         clearInterval(id);
+        playSound();
         } else {
         width++;                                        //increase width, create container fitting path
         width % 2 == 0 ? path += '..' : path += '.';
         element.style.width = width + '%'; 
-        element.style.backgroundColor = '#fe930a';         // change bar css
-        element.parentElement.style.backgroundColor = '#0ecbd7' 
+        element.style.backgroundColor = '#ff5c00';         // change bar css
+        element.parentElement.style.backgroundImage = 'none';
+            element.parentElement.style.backgroundColor = '#aae4f9';
         element.innerHTML = 'Energizing'+ path + width * 1  + '%';
         }
     }
     console.log('loading')
 }
-
+export function Sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+      this.sound.play();
+    }
+    this.stop = function(){
+      this.sound.pause();
+    }
+  }
+export function playSound(){
+    const bellSound = new Sound("./images/bells/bellSound.mp3");
+    bellSound.play();
+  }
 //                                     Elements    
 export function renderQiEl(domEl, element){
     const elementDiv = renderElement('div', 'elementDiv');

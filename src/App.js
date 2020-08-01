@@ -17,7 +17,7 @@ class App {
     this.pageContent = document.createElement('div');
     this.fieldOn = false;
     this.mood = 'afternoon';
-    this.friends = [];
+    
     this.render();
   }
   navigationEvent() {
@@ -32,10 +32,6 @@ class App {
   renderPage(hash) {
     this.pageContent.innerHTML = '';
     switch (hash) {
-      default:
-        const hiPage = new HiPage(this.pageContent);
-        hiPage.render();
-        break;
       case '#codeDeck':
         const codeDeck = new CodeDeck(this.pageContent);
         codeDeck.render();
@@ -54,6 +50,10 @@ class App {
         doorsPage.render();
         this.navigationEvent();
         break;
+      default:
+          const hiPage = new HiPage(this.pageContent);
+          hiPage.render();
+          break;
     }
   }
   handleGuest() {

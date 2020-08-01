@@ -27,7 +27,7 @@ class Header {
                 document.querySelector('.weatherWrapper').remove();
                 document.querySelector('.dailyWrapper').innerHTML = '';
                 document.querySelector('.dayContainer').innerHTML = '';
-               // document.querySelector('.hourlylyWrapper').innerHTML = '';
+                document.querySelector('.hourlyWrapper').innerHTML = '';
 
                 this.weather = false;
             }
@@ -52,8 +52,6 @@ class Header {
         })
     }
     render() {
-        // const header = document.createElement('header');
-        // header.classList.add('headerContainer');
         const header = renderElement('header', 'headerContainer');
         header.innerHTML = `<a href='index.html'>Hi,</a>
                             <navbar class='navBar'>
@@ -81,4 +79,4 @@ class Header {
 
 export { Header }
 
-//<button class='username'style='visibility:hidden;'></button>
+

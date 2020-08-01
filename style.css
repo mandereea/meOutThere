@@ -6,7 +6,8 @@
     font-family: robotoR;
 }
 body{
-    background-color: rgb(245, 245, 237); 
+    background-color: rgb(245, 245, 237);
+    /* background-color: white;  */
 }
 @font-face {
     font-family: robotoL;
@@ -238,6 +239,7 @@ input:focus{
     position:absolute;
     top:9.8em;
     left:23%;
+    z-index: 2;
     width:54%;
     background-color: rgba(250, 253, 253, 0.95);
     padding:2em;
@@ -316,11 +318,13 @@ input:focus{
 .pauseBarContainer{
     width:100%;
     height: 3em;
-    
+    /* background-image: url('./images/balance.png');
+    background-size: cover;
+    background-position: center; */
     background-color: rgb(245, 245, 237); ;
 }  
 .pauseDeLoading{
-    width:50%;
+    width:0;
     height:3em;
     background-color: rgb(245, 245, 237); ;
     padding:0.7em 0.4em;
@@ -337,13 +341,15 @@ input:focus{
 }
 .hiApp > img {
     width: 10em;
-    margin: -1.5em;
+    margin: -2em;
 }
 .pick {
    color:#744e7c; 
+   font-variant: normal;
 }
 .pick:hover{
     color:#ec994c;
+    text-decoration: underline;
 }
 .spanCode,
 .spanFlower,
@@ -389,15 +395,20 @@ input:focus{
 .spanBreath .tooltiptext{
     background-color:#0885ac;
 }
-.tooltip{
+/* .tooltip{
     text-decoration:underline;
-}
+} */
 .tooltip:hover{
     color: #EC6E4C;
+    text-decoration: underline;
 }
 .tooltip:hover .tooltiptext {
     visibility: visible;
   }
+.reminder{
+    font-size: small;
+    color: #bfc0bd;
+}
                                                            /* doorsPage */
 .doorsDiv {
     width:90%;
@@ -518,7 +529,7 @@ input:focus{
 }
 .frameTop, 
 .frameBottom {
-    background-color: #0ecbd7;
+    background-color: #dee2d6;
     opacity:0.8;
     width:100%;
     height:2em;
@@ -562,7 +573,8 @@ iframe{
 }
 
 .titleDiv{
-    background-color: rgb(132 120 137 / 80%);
+    background-color: #0885acb0; 
+    /*rgb(132 120 137 / 80%); */
     width: 100%;
     position: relative;
     top: 13.5em;
@@ -576,12 +588,24 @@ iframe{
     color: #faf5fa;
     width: 70%;
 }
-.infoBtn{
+.infoBtn, 
+.playBtn,
+.gitBtn{
     width: 1.5em;
     height:1.5em;
     padding:0.5em;
     background-size: cover;
     background-color: rgba(211, 202, 151,0);
+   
+}
+.infoBtn{
+    background-image: url('./images/codePractice/icons/iInfoLight.png');
+}
+.playBtn{
+    background-image: url('./images/codePractice/icons/iPlayLight.png');
+}
+.gitBtn{
+    background-image: url('./images/codePractice/icons/gitinfoLight.png')
 }
 .infoDiv {
     background-color: rgb(14, 203, 215);
@@ -710,7 +734,8 @@ iframe{
     color: #585b5c;
 }
 .coldTemp,
-.warmTemp{
+.warmTemp,
+.neutral {
     width: 60%;
     padding: 1em;
     background-color: rgba(14, 202, 216,0.8);
@@ -748,7 +773,7 @@ iframe{
     position: absolute;
     top:0;
     right:0;
-    z-index:-1;
+    z-index:1;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
@@ -803,12 +828,15 @@ iframe{
     margin:0.3em;
 }
 .dailyWrapper,
-.dayContainer{
+.dayContainer,
+.hourlyWrapper{
     margin-top:0.5em;
     width: 33%;
     align-self: flex-end;
     background-color: #f5eada;
-    
+}
+.dailyWrapper,
+.dayContainer{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -880,6 +908,16 @@ iframe{
 .colder{
     color:rgb(5, 121, 199);
 }
+.hourDiv{
+    padding: 1em;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.hourDiv img{
+    width: 3em;
+}
 
 /*                                                              TeaPavilion     */
 
@@ -924,6 +962,7 @@ iframe{
     margin-bottom:1em;
     position:relative;
     background-color: rgb(210, 224, 186);
+    cursor: pointer;
 }
 .herbDiv img{
     width:100%;

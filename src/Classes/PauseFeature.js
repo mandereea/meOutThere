@@ -1,4 +1,4 @@
-import { renderElement, renderBtn, getRandom, renderBreathDetails,renderBreath, deLoading, loading, renderBar } from '../../utilitary.js';
+import { renderElement, renderBtn, renderBreath, deLoading, loading, renderBar } from '../../utilitary.js';
 import { yinBreaths, yangBreaths } from '../../Files/Breaths.js'
 
 class PauseFeature{
@@ -8,16 +8,6 @@ class PauseFeature{
         this.yinBreath = [];
         this.yangBreath = [];
     }
-    
-    // renderBar(){
-    //     const pauseBarContainer = renderElement('div', 'pauseBarContainer');
-    //     pauseContainer.innerHTML = `<div class='pauseDeLoading'></div>`
-    //     this.domEl.appendChild(pauseBarContainer);
-    // }
-    // moveBar(){
-    //     const deLoad = document.querySelector('.pauseDeLoading');   
-    //     deLoading(deLoad, 1000)
-    // }
     render(){
         const pauseContainer = renderElement('div', 'pauseContainer');
         

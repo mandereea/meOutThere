@@ -49,7 +49,7 @@ class FlowerPeek{
         flowerPeek.innerHTML = `<img src=${this.flower.imgSrc} alt='flower picture' />
                                 <div class='flowerNames'>
                                     <h4><span>I'm </span>${this.flower.name[0]}</h4>
-                                    <p>${this.flower.name[1]}, ${this.flower.name[2]}</p>
+                                    <p>${this.flower.name[1]}</p>
                                 </div>
                                 <p class=${tempClass}>${this.flower.temperament[0]}</p>`
         flowerPeek.append(closeBtn);

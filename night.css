@@ -238,8 +238,9 @@ input:focus{
     position:absolute;
     top:9.8em;
     left:23%;
+    z-index: 2;
     width:54%;
-    background-color: rgba(250, 253, 253, 0.95);
+    background-color: rgba(58,58,58, 0.95);
     padding:2em;
 
     display:flex;
@@ -265,12 +266,12 @@ input:focus{
 .yangBtn{
     width: 5em;
     padding:1em;
-    background-color: rgba(14, 203, 215,0.9);
+    background-color: rgba(14, 203, 215,0.8);
     border-radius:6px;
     font-size: larger;
 }
 .yangBtn{
-    background-color: rgba(254, 147, 10,0.9);
+    background-color: rgba(254, 147, 10,0.8);
 }
 .pauseContainer > h3, 
 .pauseContainer > p {
@@ -281,10 +282,11 @@ input:focus{
 }
 .breathDiv > p{
     line-height: 2em;
+    font-family: robotoL;
 }
 .breathDiv > h2{
-    font-family: 'robotoR';
-    color: #363633;
+    font-family: robotoL;
+    color: #f5f5ed;
     font-weight: 500;
     text-align: center;
     margin-bottom: 1em;
@@ -329,7 +331,7 @@ input:focus{
 
 /*                                                      hiPage */
 .hiApp{
-    margin-top: 2em;
+    
     text-align: center;
     line-height: 1.5em;
     
@@ -389,19 +391,21 @@ b{
     border:none;
 }
 .codeTalk:focus{
-    background-color: #744e7c;
+    background-color: #cbb5d6;
+    color: #363433;
 }
 .spanFlower .tooltiptext{
-    background-color:#92d00d;
+    background-color:#d0e2ab;
+    color: #363433;
 }
 .spanBreath .tooltiptext{
-    background-color:#0885ac;
+    background-color:#aae5f2;
+    color: #363433;
 }
-.tooltip{
-    text-decoration:underline;
-}
+
 .tooltip:hover{
     color: #EC6E4C;
+    text-decoration:underline;
 }
 .tooltip:hover .tooltiptext {
     visibility: visible;
@@ -570,7 +574,7 @@ iframe{
 
 .titleDiv{
     /* background-color: #744e7c; */
-    background-color: rgba(116, 78, 124,0.4);
+    background-color: rgba(58, 58, 58, 0.85);
     width: 100%;
     position: relative;
     top: 13.5em;
@@ -587,14 +591,26 @@ iframe{
     color: white;
     width: 70%;
 }
-.infoBtn{
+.infoBtn, 
+.playBtn,
+.gitBtn{
     width: 1.5em;
     height:1.5em;
     padding:0.5em;
     background-size: cover;
-    background-color: rgba(116, 78, 124, 0);
-    cursor:pointer;
+    background-color: rgba(211, 202, 151,0);
+    cursor: pointer;
 }
+.infoBtn{
+    background-image: url('./images/codePractice/icons/infoIcon.png');
+}
+.playBtn{
+    background-image: url('./images/codePractice/icons/play.png');
+}
+.gitBtn{
+    background-image: url('./images/codePractice/icons/gitIcon.png')
+}
+
 .infoDiv {
     background-color: #ec994c;
     color:rgb(252, 252, 252);
@@ -629,6 +645,9 @@ iframe{
 .studyDiv img{
     margin-bottom:1em;
 }
+.studyDiv p{
+    color: #f0d0b2;
+}
 .practiceDiv{
     margin-top: 2em;
     padding: 0.3em;
@@ -636,6 +655,11 @@ iframe{
     flex-flow: row wrap;
     justify-content: space-between;
 }
+.practiceRight p,
+.practiceLeft p{
+    font-family: robotoL;
+}
+
 .practiceRight{
     text-align: right;
     align-self: flex-end;
@@ -728,7 +752,8 @@ iframe{
     color: #998f7f;
 }
 .coldTemp,
-.warmTemp{
+.warmTemp,
+.neutral{
     width: 60%;
     padding: 1em;
     background-color: rgba(14, 202, 216,0.8);
@@ -760,7 +785,7 @@ iframe{
     
 }
 
-/*                      WeatherApp          */
+/*                                                                WeatherApp          */
 .weatherWrapper{
     width:100%;
     height: 5em;
@@ -778,7 +803,7 @@ iframe{
     justify-content: space-between;
     align-items: center;
     flex-flow: row wrap;
-    background-color: #f5eada; 
+    /* background-color: #f5eada;  */
 }
 .todayContainer > div{
     margin:0;
@@ -789,20 +814,19 @@ iframe{
     justify-content: center;
     align-items:center;
 }
-.weatherImgDiv{
-    background-color: rgba(116, 78, 124,0.8);
+/* .weatherImgDiv{
+    border-left: 0.5px solid #EC6E4C;
 
-}
+} */
 .todayContainer >div > img{
     width:4em;
     margin:0;
     padding:0;
     margin-top:-0.5em;
-
 }
 .todayContainer >div > p{
     font-size: medium;
-    color: rgb(116, 78, 124);
+    color: #ecece2;
     margin:0;
     padding:0;
 }
@@ -816,88 +840,102 @@ iframe{
     flex-direction: column;
 }
 .weatherBtns > button{
-    background-color: rgba(116, 78, 124,0.8);
+    background-color: rgba(236, 153, 76, 0.8);
     width: 90%;
     padding:0.5em;
     margin:0.3em;
 }
 .dailyWrapper,
-.dayContainer{
-margin-top:0.5em;
-width: 33%;
-align-self: flex-end;
-background-color: #f5eada;
-color: #744e7c;
-display: flex;
-flex-flow: row wrap;
-justify-content: space-between;
-align-items: center;
+.dayContainer, 
+.hourlyWrapper {
+    margin-top:0.5em;
+    width: 33%;
+    align-self: flex-end;
+    /* background-color: #f5eada;
+    color: #744e7c; */
+}
+.dailyWrapper,
+.dayContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 .dayShortDiv {
-width: 12%;
-padding: 1em;
-font-size: small;
-display: flex;
-flex-flow: column wrap;
-align-items: center;
+    width: 12%;
+    padding: 1em;
+    font-size: small;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
 }
 .dayShortDiv img{
-width: 100%;
+    width: 100%;
 }
 .arrow {
-margin-top:1em;
-border: solid #EC6E4C;
-border-width: 0 3px 3px 0;
-display: inline-block;
-padding: 3px;
+    margin-top:1em;
+    border: solid #EC6E4C;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
 }
 .down{
-transform: rotate(45deg);
--webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
 .up{
-transform: rotate(-135deg);
--webkit-transform: rotate(-135deg);
-margin-left:2em;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    margin-left:2em;
 }
 .dayLeft,
 .dayIcon,
 .dayRight{
-width:30%;
-padding: 0 0.3em;
-font-size: small;
-text-align: center;
-display:flex;
-flex-flow: column wrap;
-align-items: center;
-justify-content: flex-end;
+    width:30%;
+    padding: 0 0.3em;
+    font-size: small;
+    text-align: center;
+    display:flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: flex-end;
 }
 .dayLeft >h4,
 .dayRight >h4 {
-margin-bottom:0.5em;
+    margin-bottom:0.5em;
 ;
 }
 .dayIcon img{
-width:60%;
+    width:60%;
 }
 .dayIcon h3{
-font-variant: normal;
-margin-top: -1em;
+    font-variant: normal;
+    margin-top: -1em;
 }
 .no-details{
-margin: 1em;
+    margin: 1em;
 }
 .rise{
-color: #EC6E4C;
+    color: #EC6E4C;
 }
 .set{
-color:rgb(120, 70, 139);
+    color:rgb(120, 70, 139);
 }
 .warmer{
-color: #EC6E4C;
+    color: #EC6E4C;
 }
 .colder{
-color:rgb(5, 121, 199);
+    color:rgb(5, 121, 199);
+}
+.hourDiv{
+    padding: 1em;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.hourDiv img{
+    width: 3.3em;
 }
 
 /*                                                              TeaPavilion     */
@@ -910,22 +948,27 @@ color:rgb(5, 121, 199);
     margin-bottom: 2em;
 }
 .teaPage >h3 > span{
-font-variant: normal;
-padding: 1em;
-margin-left: 19%;
+    font-family: robotoL;
+    font-variant: normal;
+    letter-spacing: 0.1em;
+    padding: 1em;
+    margin-left: 19%;
+    color: #f4f7ee;
 }
 .herbsLeft >p{
-margin-bottom: 0.5em;
-margin-left: 1em;
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+    
 }
 .herbsLeft a{
-font-variant: normal;
-color: #38203d;
+    font-variant: normal;
+    color: #f4f7ee;
+    font-family: robotoL; 
 }
 .herbsRight{
-width: 76%; 
-margin-right: -2em;
-background-color: #363433;
+    width: 76%; 
+    margin-right: -2em;
+    background-color: #363433;
 }
 
 .teaShelf{
