@@ -48,6 +48,18 @@ export const flowers = [
         }
     },
     {
+        name: ['LooseStrife', 'Lythrum salicaria, Rachitan'],
+        imgSrc:'../../images/flowers/rachitan.jpg',
+        temperament: ['Cool and Astringent',[-1, 0]],
+        history:['','',''],
+        dayFact:['','',''],
+        description: {
+            taste: ['Sweet', 'S'],
+            skill: 'Use for loss of blood/fluids, barrier hot conditions, lower blood sugar and stimulate metabolism',
+            enemies: 'Yin deficiency Heat, Flood, Eye/Skin/Lower Gates intruders, Sore cough, Blood Sugar Excess'
+        }
+    },
+    {
         name:['Self-heal','Prunella Vulgaris, Busuioc de camp'],
         imgSrc: '../../images/flowers/selfHeal.jpg',
         temperament: ['Cold ', [-2, 0]],
@@ -134,7 +146,7 @@ export const flowers = [
     {
         name:['Angelica','Angelica Archangelica, Angelica'],
         imgSrc: '../../images/flowers/angelica.jpg',
-        temperament: ['Warm, Tonic',[1, 0]],
+        temperament: ['Warm , Tonic',[1, 0]],
         history: ['400 B.C. Greece',''],
         dayFact: ['In eastern medicine, it\'s surpassed by only gingseng as a vitality builder'],
         description: {
@@ -203,6 +215,18 @@ export const flowers = [
             enemies:''
         }
     },
+    {
+        name:['Denseflower Mullein','Verbascum densiflorum, Lumanarica'],
+        imgSrc: '../../images/flowers/lumanarica.jpg',
+        temperament: ['Cool , Astringent',[-2, 0]],
+        history: ['400 B.C. Greece',''],
+        dayFact: [],
+        description: {
+            taste:['Bitter', 'B'],
+            skill:'Use to calm Shen, to disperse Fluid Wind Heat conditions, ',
+            enemies:''
+        }
+    }
 
 ]
 export const flowerBtns = [
