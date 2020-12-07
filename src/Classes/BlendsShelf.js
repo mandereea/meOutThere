@@ -18,6 +18,13 @@ class BlendsShelf{
                                     <p class='blendRatio'>${blend.ratio}</p>
                                   </div>`
             blendsShelf.appendChild(blendDiv)
+            // blendDiv.addEventListener('click',(e) => {
+            //     const blendDetDiv = document.querySelector('.herbsRight');
+            //     blendDetDiv.innerHTML = '';
+            //     const blendDetails = new blendDetails(blendDetDiv, blendDet)
+            //     blendDetails.render();
+            //     scroll(0,0);
+            // })
         })
 
         this.domEl.appendChild(blendsShelf);
