@@ -1,5 +1,6 @@
 import { renderElement, renderTastes } from '../../utilitary.js';
 import { TeaShelf } from '../Classes/TeaShelf.js';
+import { BlendsShelf } from '../Classes/BlendsShelf.js';
 
 
 class TeaPage{
@@ -47,6 +48,22 @@ class TeaPage{
 
         // }
     }
+    renderShelf(){
+        const herbsBtns = document.getElementsByClassName('shelvesBtn');
+        const teaBottom = document.querySelector('.teaBottom');
+            
+        herbsBtns[0].addEventListener('click', (e)=>{
+            teaBottom.innerHTML = '';
+            const teaShelf = new TeaShelf(teaBottom);
+            teaShelf.sortHerbs();
+            teaShelf.render();
+        })
+        herbsBtns[1].addEventListener('click',(e)=> {
+            teaBottom.innerHTML = '';
+            const blendsShelf = new BlendsShelf(teaBottom);
+        blendsShelf.render();
+        })
+    }
     render(){
         const teaPg = renderElement('div', 'teaPage');
         teaPg.innerHTML = `<div class='teaTop'>
@@ -62,14 +79,26 @@ class TeaPage{
                                 </div>
                             </div>
                             <h3> The Practice: <span> Wander - Pick - Research - Prepare - Explore - Enjoy</span>
-                            <h3> The Herbs Shelf:</h3>
-                            <div class='teaBottom'>
-                                <div class='oneHerb'></div>
-                            </div>`;
-       
-        const teaShelf = new TeaShelf(teaPg);
-        teaShelf.sortHerbs();
-        teaShelf.render();
+                            </h3>
+                            <div class='shelves'>
+                                <button class='shelvesBtn'>The Herbs Shelf </button>
+                                <button class='shelvesBtn'> The Blends Shelf </button>
+                            </div>
+                                <div class='teaBottom'>
+                                    <div class='oneHerb'></div>
+                                </div>`;
+
+                            // <h3> The Herbs Shelf:</h3>
+                            // <div class='teaBottom'>
+                            //     <div class='oneHerb'></div>
+                            // </div>`;
+        
+        // const teaShelf = new TeaShelf(teaPg);
+        // teaShelf.sortHerbs();
+        // teaShelf.render();
+
+        // const blendsShelf = new BlendsShelf(teaPg);
+        // blendsShelf.render();
         
         this.appDOM.appendChild(teaPg);
     }

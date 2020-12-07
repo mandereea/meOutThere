@@ -39,6 +39,7 @@ class App {
       case '#tea':
         const teaPage = new TeaPage(this.pageContent);
         teaPage.render();
+        teaPage.renderShelf();
         teaPage.handleNavigation();
         break;
       case '#yoQi':

@@ -1,8 +1,5 @@
 import { renderElement, rememberGuest, renderGuestBtn, renderFriendBtn, addEmailBtn, rememberContact, renderBtn } from '../../utilitary.js';
 
-// import { RegisterForm } from './RegisterForm.js';
-
-
 class WelcomeForm {
     constructor(DomEl) {
         this.DomEl = DomEl

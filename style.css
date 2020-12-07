@@ -946,8 +946,12 @@ iframe{
     margin-right: -2em;
     background-color: rgb(245, 245, 237);;
 }
-
-.teaShelf{
+.shelvesBtn{
+   border: none;
+   color: black; 
+}
+.teaShelf,
+.blendsShelf{
     width: 103%;
     align-self: flex-end;
     margin-right: -2em;
@@ -956,7 +960,8 @@ iframe{
     justify-content: space-between;
 }
 
-.herbDiv{
+.herbDiv,
+.blendDiv{
     width:16%;
     height:16em;
     margin-bottom:1em;
@@ -964,12 +969,14 @@ iframe{
     background-color: rgb(210, 224, 186);
     cursor: pointer;
 }
-.herbDiv img{
+.herbDiv img,
+.blendDiv img{
     width:100%;
     min-height: 70%;
     max-height:90%;
 }
-.shelfHerb{
+.shelfHerb,
+.shelfBlend{
     position:absolute;
     width:100%;
     bottom:0;
@@ -977,7 +984,8 @@ iframe{
     color: #343135;
     
 }
-.shelfHerb h4{
+.shelfHerb h4,
+.blendShelf h4{
     font-variant: normal;
     font-size: larger;
     padding: 0.5em;
